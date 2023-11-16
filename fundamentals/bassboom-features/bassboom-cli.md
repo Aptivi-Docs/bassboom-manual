@@ -48,20 +48,20 @@ When BassBoom.Cli is in idle mode (music not playing, music paused, etc.), you c
 
 When BassBoom.Cli goes into this mode by playing any music, you can use these controls:
 
-| Control      | Action                                                      |
-| ------------ | ----------------------------------------------------------- |
-| UP           | Raises the volume                                           |
-| DOWN         | Lowers the volume                                           |
-| RIGHT        | Seeks the music forward by the set seek rate                |
-| CTRL + RIGHT | Increases the seek rate by 50 milliseconds                  |
-| LEFT         | Seeks the music backward by the set seek rate               |
-| CTRL + LEFT  | Decreases the seek rate by 50 milliseconds                  |
-| B            | Goes back to the previous song in the playlist and plays it |
-| N            | Goes to the next song in the playlist and plays it          |
-| SPACE        | Pauses the music                                            |
-| R            | Removes the currently playing song                          |
-| CTRL + R     | Removes all the songs                                       |
-| ESC          | Stops the song                                              |
-| H            | Shows the help screen                                       |
-| I            | Shows the song info                                         |
-| Q            | Exits BassBoom.Cli                                          |
+| Control        | Action                                                      |
+| -------------- | ----------------------------------------------------------- |
+| `UP`           | Raises the volume                                           |
+| `DOWN`         | Lowers the volume                                           |
+| `RIGHT`        | Seeks the music forward by the set seek rate                |
+| `CTRL + RIGHT` | Increases the seek rate by 50 milliseconds                  |
+| `LEFT`         | Seeks the music backward by the set seek rate               |
+| `CTRL + LEFT`  | Decreases the seek rate by 50 milliseconds                  |
+| `B`            | Goes back to the previous song in the playlist and plays it |
+| `N`            | Goes to the next song in the playlist and plays it          |
+| `SPACE`        | Pauses the music                                            |
+| `R`            | Removes the currently playing song                          |
+| `CTRL + R`     | Removes all the songs                                       |
+| `ESC`          | Stops the song                                              |
+| `H`            | Shows the help screen                                       |
+| `I`            | Shows the song info                                         |
+| `Q`            | Exits BassBoom.Cli                                          |
