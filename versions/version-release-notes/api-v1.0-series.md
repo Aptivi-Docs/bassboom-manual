@@ -31,3 +31,43 @@ This version was released on November 14th, 2023, as a celebration of the .NET 8
 
 * Updated Avalonia
 * Show song name and duration in the music list
+
+## Version 0.0.2.1
+
+This version was released on November 15th, 2023 to fix an issue regarding loading the library modules.
+
+### Improvements (Basolia)
+
+* Fixed loading modules
+
+## Version 0.0.3
+
+This version was released on December 14th, 2023 to bring with you improvements.
+
+### Improvements (Basolia)
+
+* Added the music file labeler
+* Removed fugitive mode for your sanity
+* Hardened `AudioInfoTools` on playback
+
+### Improvements (CLI music player)
+
+* Updated Terminaux
+* Made the CLI resizable
+
+## Version 0.0.3.1
+
+This version was released on December 21th, 2023 to facilitate debugging the Basolia library.
+
+### Improvements (Basolia)
+
+* Added support for Source Link
+
+## Version 0.0.4
+
+This version was released on January 18th, 2024 to be able to use BassBoom on .NET Framework applications.
+
+### Improvements (Basolia)
+
+* Added support for .NET Framework applications
+* Updated dependencies
