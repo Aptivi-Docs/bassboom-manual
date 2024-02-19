@@ -6,7 +6,7 @@ description: Play your music!
 
 The playback tools in the Basolia library contains two separate sections: the actual playback tools and the playback positioning tools.
 
-## Playback Tools
+## Playback tools
 
 The playback tools shipped with the Basolia library is a key feature for every single music player.
 
@@ -99,4 +99,40 @@ public static void SeekToTheBeginning()
 
 // For seeking to a specific MPEG frame
 public static void SeekToFrame(int frame)
+```
+
+## Equalizer tools
+
+BassBoom's Basolia library also allows you to modify the equalizer settings during playback so that you can listen to enhanced music. It currently supports 32 bands as MPG123 supports.
+
+{% hint style="info" %}
+You can run this tool on either left, right, or both speakers.
+{% endhint %}
+
+### Getting current equalizer values
+
+If you want to get the current equalizer values, you can use the below function:
+
+```csharp
+public static double GetEqualizer(mpg123_channels channels, int bandIdx)
+```
+
+### Setting equalizer values
+
+If you want to set the equalizer values for one or more bands to make your music sound better, you can use the below function:
+
+```csharp
+// For one band
+public static void SetEqualizer(mpg123_channels channels, int bandIdx, double value)
+
+// For more than one bands
+public static void SetEqualizerRange(mpg123_channels channels, int bandIdxStart, int bandIdxEnd, double value)
+```
+
+### Resetting equalizer values
+
+If you want to reset the equalizer values to their natural states (`1.00`), you can use the below function:
+
+```csharp
+public static void ResetEqualizer()
 ```

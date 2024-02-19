@@ -42,6 +42,7 @@ When BassBoom.Cli is in idle mode (music not playing, music paused, etc.), you c
 | `S`        | Adds songs from a music library directory to the playlist               |
 | `R`        | Removes the current song                                                |
 | `CTRL + R` | Removes all the songs                                                   |
+| `E`        | Opens the interactive equalizer                                         |
 | `Q`        | Exits the program                                                       |
 
 ### Playing mode
@@ -64,4 +65,16 @@ When BassBoom.Cli goes into this mode by playing any music, you can use these co
 | `ESC`          | Stops the song                                              |
 | `H`            | Shows the help screen                                       |
 | `I`            | Shows the song info                                         |
+| `E`            | Opens the interactive equalizer                             |
 | `Q`            | Exits BassBoom.Cli                                          |
+
+### Equalizer screen
+
+You can also modify how your song plays like in real-time using the interactive equalizer. You can use these controls:
+
+| Control       | Action                                     |
+| ------------- | ------------------------------------------ |
+| `<-` / `->`   | Changes the current equalizer band's value |
+| `UP` / `DOWN` | Selects the equalizer band                 |
+| `R`           | Resets all values                          |
+| `Q`           | Goes back to the player                    |

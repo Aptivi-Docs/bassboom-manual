@@ -6,6 +6,10 @@ description: Music player in your desktop!
 
 <figure><img src="../../.gitbook/assets/BB.Gui.png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="info" %}
+Currently, BassBoom 0.0.5 and above no longer provides the GUI version. We'll make a better GUI version soon in a future release.
+{% endhint %}
+
 Additionally, BassBoom provides a GUI version of the music player, which allows you to interactively play music with the graphical UI. It's easy to use; just use the buttons that are shown.
 
 Currently, it opens with the playlist empty. You can use one of the two buttons to add songs to the playlist:
