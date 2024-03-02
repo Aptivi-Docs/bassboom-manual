@@ -40,7 +40,6 @@
 
 ***
 
-* [🧱 Project Dependencies](project-dependencies.md)
 * [Report an issue](https://github.com/Aptivi/BassBoom/issues/new)
 * [Source code](https://github.com/Aptivi/BassBoom)
 * [Our projects](https://github.com/Aptivi)

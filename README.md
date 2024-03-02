@@ -17,3 +17,5 @@ To learn more about mpg123, visit this site:
 ## This documentation
 
 To get started, select a page on the left edge of the screen to get started.
+
+mpg123 is licensed with [LGPL 2.1](https://mpg123.de/trunk/COPYING).
