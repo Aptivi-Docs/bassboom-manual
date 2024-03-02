@@ -14,12 +14,18 @@ InitBasolia.Init();
 
 A music player built with BassBoom is provided with the base BassBoom source code. You can read its source code [here](https://github.com/Aptivi/BassBoom/blob/main/BassBoom.Cli/CliBase/).
 
-The Basolia library is categorized to five categories:
+The Basolia library is categorized to six categories:
 
-* Devices: Provides you functions that manipulate with the sound devices probed by the MPG123 library.
-* File: Provides you functions that allow you to open and close the music file.
-* Format: Provides you audio format tools, audio metadata tools, and audio decode tools.
-* Lyrics: Provides you a basic lyrics (.LRC) support.
-* Playback: Provides you playback functions, such as playing, pausing, and stopping the music.
+* **Devices**: Provides you functions that manipulate with the sound devices probed by the MPG123 library.
+* **File**: Provides you functions that allow you to open and close the music file.
+* **Format**: Provides you audio format tools, audio metadata tools, and audio decode tools.
+* **Lyrics**: Provides you basic lyrics (.LRC) support.
+* **Playback**: Provides you playback functions, such as playing, pausing, and stopping the music.
+* **Albums**: Provides you functions that are able to help you more quickly prepare your studio album for your music collection.
 
-Each category has its own page, so click on one of the pages in the left side pane.
+Each category has its own page, so click on one of the pages in the left side pane. As for the general tools, you can get the MPG123 version and the BassBoom Basolia's version using the following properties located in `InitBasolia`:
+
+* **MpgLibVersion**: Gives you the MPG123 version shipped with the BassBoom.Native NuGet package.
+* **OutLibVersion**: Gives you the OUT123 version shipped with the BassBoom.Native NuGet package.
+* **SynLibVersion**: Gives you the SYN123 version shipped with the BassBoom.Native NuGet package.
+* **BasoliaVersion**: Gives you the BassBoom.Basolia version.

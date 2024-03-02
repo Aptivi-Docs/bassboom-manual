@@ -29,44 +29,13 @@ You can use the following keys to navigate through the entire music player. Howe
 
 When BassBoom.Cli is in idle mode (music not playing, music paused, etc.), you can use the following controls:
 
-| Control    | Action                                                                  |
-| ---------- | ----------------------------------------------------------------------- |
-| `UP`       | Raises the volume                                                       |
-| `DOWN`     | Lowers the volume                                                       |
-| `SPACE`    | Plays the music                                                         |
-| `B`        | Goes back to the previous song in the playlist and plays it             |
-| `N`        | Goes to the next song in the playlist and plays it                      |
-| `H`        | Shows the help menu                                                     |
-| `I`        | Shows the song information, including the bit rate, artist, genre, etc. |
-| `A`        | Adds a single song to the playlist                                      |
-| `S`        | Adds songs from a music library directory to the playlist               |
-| `R`        | Removes the current song                                                |
-| `CTRL + R` | Removes all the songs                                                   |
-| `E`        | Opens the interactive equalizer                                         |
-| `Q`        | Exits the program                                                       |
+<table><thead><tr><th width="191">Control</th><th>Action</th></tr></thead><tbody><tr><td><code>UP</code></td><td>Raises the volume</td></tr><tr><td><code>DOWN</code></td><td>Lowers the volume</td></tr><tr><td><code>SPACE</code></td><td>Plays the music</td></tr><tr><td><code>B</code></td><td>Goes back to the previous song in the playlist and plays it</td></tr><tr><td><code>N</code></td><td>Goes to the next song in the playlist and plays it</td></tr><tr><td><code>H</code></td><td>Shows the help menu</td></tr><tr><td><code>I</code></td><td>Shows the song information, including the bit rate, artist, genre, etc.</td></tr><tr><td><code>A</code></td><td>Adds a single song to the playlist</td></tr><tr><td><code>S</code></td><td>Adds songs from a music library directory to the playlist</td></tr><tr><td><code>R</code></td><td>Removes the current song</td></tr><tr><td><code>CTRL + R</code></td><td>Removes all the songs</td></tr><tr><td><code>E</code></td><td>Opens the interactive equalizer</td></tr><tr><td><code>Z</code></td><td>Shows BassBoom and platform information</td></tr><tr><td><code>Q</code></td><td>Exits the program</td></tr></tbody></table>
 
 ### Playing mode
 
 When BassBoom.Cli goes into this mode by playing any music, you can use these controls:
 
-| Control        | Action                                                      |
-| -------------- | ----------------------------------------------------------- |
-| `UP`           | Raises the volume                                           |
-| `DOWN`         | Lowers the volume                                           |
-| `RIGHT`        | Seeks the music forward by the set seek rate                |
-| `CTRL + RIGHT` | Increases the seek rate by 50 milliseconds                  |
-| `LEFT`         | Seeks the music backward by the set seek rate               |
-| `CTRL + LEFT`  | Decreases the seek rate by 50 milliseconds                  |
-| `B`            | Goes back to the previous song in the playlist and plays it |
-| `N`            | Goes to the next song in the playlist and plays it          |
-| `SPACE`        | Pauses the music                                            |
-| `R`            | Removes the currently playing song                          |
-| `CTRL + R`     | Removes all the songs                                       |
-| `ESC`          | Stops the song                                              |
-| `H`            | Shows the help screen                                       |
-| `I`            | Shows the song info                                         |
-| `E`            | Opens the interactive equalizer                             |
-| `Q`            | Exits BassBoom.Cli                                          |
+<table><thead><tr><th width="192">Control</th><th>Action</th></tr></thead><tbody><tr><td><code>UP</code></td><td>Raises the volume</td></tr><tr><td><code>DOWN</code></td><td>Lowers the volume</td></tr><tr><td><code>RIGHT</code></td><td>Seeks the music forward by the set seek rate</td></tr><tr><td><code>CTRL + RIGHT</code></td><td>Increases the seek rate by 50 milliseconds</td></tr><tr><td><code>LEFT</code></td><td>Seeks the music backward by the set seek rate</td></tr><tr><td><code>CTRL + LEFT</code></td><td>Decreases the seek rate by 50 milliseconds</td></tr><tr><td><code>B</code></td><td>Goes back to the previous song in the playlist and plays it</td></tr><tr><td><code>N</code></td><td>Goes to the next song in the playlist and plays it</td></tr><tr><td><code>SPACE</code></td><td>Pauses the music</td></tr><tr><td><code>R</code></td><td>Removes the currently playing song</td></tr><tr><td><code>CTRL + R</code></td><td>Removes all the songs</td></tr><tr><td><code>ESC</code></td><td>Stops the song</td></tr><tr><td><code>H</code></td><td>Shows the help screen</td></tr><tr><td><code>I</code></td><td>Shows the song info</td></tr><tr><td><code>E</code></td><td>Opens the interactive equalizer</td></tr><tr><td><code>D</code></td><td>Shows all devices and drivers probed by MPG123</td></tr><tr><td><code>Z</code></td><td>Shows BassBoom and platform information</td></tr><tr><td><code>Q</code></td><td>Exits BassBoom.Cli</td></tr></tbody></table>
 
 ### Equalizer screen
 

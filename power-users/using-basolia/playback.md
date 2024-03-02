@@ -136,3 +136,21 @@ If you want to reset the equalizer values to their natural states (`1.00`), you 
 ```csharp
 public static void ResetEqualizer()
 ```
+
+### Getting native state
+
+If you want to get the native state of the output stream that represents the currently playing music, you can use this function:
+
+```csharp
+public static (long, double) GetNativeState(mpg123_state state)
+```
+
+The `mpg123_state` enumeration has the following states for you to get:
+
+* **MPG123\_ACCURATE**: Accurate rendering
+* **MPG123\_BUFFERFILL**: Buffer fill
+* **MPG123\_DEC\_DELAY**: Decode delay in milliseconds
+* **MPG123\_ENC\_DELAY**: Encode delay in milliseconds
+* **MPG123\_ENC\_PADDING**: Encoding padding
+* **MPG123\_FRANKENSTEIN**: Frankenstein stream?
+* **MPG123\_FRESH\_DECODER**: Fresh decoder

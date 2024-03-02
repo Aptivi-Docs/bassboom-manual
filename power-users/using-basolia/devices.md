@@ -37,3 +37,18 @@ To set the active device for a specified driver, you can use the `SetActiveDevic
 ```csharp
 public static void SetActiveDevice(string driver, string device)
 ```
+
+### Getting current driver and device
+
+```csharp
+// Non-cached
+public static (string driver, string device) GetCurrent()
+
+// Cached
+public static (string driver, string device) GetCurrentCached()
+```
+
+If you want to know your current device and driver that are being used by MPG123 to play music from, you'll need to use one of the following functions:
+
+* `GetCurrent()`: Gets the current driver and device that MPG123 reports
+* `GetCurrentCached()`: Gets the cached current driver and device that Basolia reports

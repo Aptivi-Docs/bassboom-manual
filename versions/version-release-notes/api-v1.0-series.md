@@ -71,3 +71,49 @@ This version was released on January 18th, 2024 to be able to use BassBoom on .N
 
 * Added support for .NET Framework applications
 * Updated dependencies
+
+## Version 0.0.4.1
+
+This version was released on January 21st, 2024.
+
+### Improvements (Basolia)
+
+* Improved support for 32-bit systems
+
+## Version 0.0.4.2
+
+This version was released on February 6th, 2024.
+
+### Improvements (Basolia)
+
+* Added `.snupkg` symbols
+
+## Version 0.0.5
+
+This version was released on February 20th, 2024.
+
+### Improvements (Basolia)
+
+* Added equalizer
+* General improvements
+
+### Removals (GUI music player)
+
+* Removed the GUI music player until we can come up with a better appearance
+
+## Version 0.0.6
+
+This version was released on March 2nd, 2024.
+
+### Improvements (Basolia)
+
+* Added decoder tools
+* Added native status tools
+* Added version properties
+* Band numbers are now titled appropriately
+* General improvements
+
+### Improvements (CLI music player)
+
+* Updated Terminaux
+* Added an option to show operating system and BassBoom info

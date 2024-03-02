@@ -150,3 +150,23 @@ To manually decode a frame, you must use the `DecodeFrame()` function. Most of t
 ```csharp
 public static int DecodeFrame(ref int num, ref byte[] audio, ref int bytes)
 ```
+
+### Get/Set current decoder
+
+If you want to get the current decoder or if you want to set the current decoder to something else, you need to use the `Decoder` property.
+
+```csharp
+public static string Decoder
+```
+
+{% hint style="info" %}
+Make sure that you're using a decoder that's supported for your device. Otherwise, you'll get an error saying that the required decoder is not supported.
+{% endhint %}
+
+### Get current decoders
+
+If you want to either get all the decoders that are implemented in the distributed version of MPG123 library, or if you want to get all the decoders that your system can use, you'll need to use the `GetDecoders` function.
+
+```csharp
+public static string[] GetDecoders(bool onlySupported)
+```
