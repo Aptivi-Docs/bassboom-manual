@@ -22,10 +22,11 @@ The Basolia library is categorized to six categories:
 * **Lyrics**: Provides you basic lyrics (.LRC) support.
 * **Playback**: Provides you playback functions, such as playing, pausing, and stopping the music.
 * **Albums**: Provides you functions that are able to help you more quickly prepare your studio album for your music collection.
+* **Radio**: Provides you functions that let you play and query Internet radio stations.
 
 Each category has its own page, so click on one of the pages in the left side pane. As for the general tools, you can get the MPG123 version and the BassBoom Basolia's version using the following properties located in `InitBasolia`:
 
-* **MpgLibVersion**: Gives you the MPG123 version shipped with the BassBoom.Native NuGet package.
-* **OutLibVersion**: Gives you the OUT123 version shipped with the BassBoom.Native NuGet package.
-* **SynLibVersion**: Gives you the SYN123 version shipped with the BassBoom.Native NuGet package.
-* **BasoliaVersion**: Gives you the BassBoom.Basolia version.
+* **MpgLibVersion**: Gives you the MPG123 version shipped with the `BassBoom.Native` NuGet package.
+* **OutLibVersion**: Gives you the OUT123 version shipped with the `BassBoom.Native` NuGet package.
+* **SynLibVersion**: Gives you the SYN123 version shipped with the `BassBoom.Native` NuGet package.
+* **BasoliaVersion**: Gives you the `BassBoom.Basolia` version.
