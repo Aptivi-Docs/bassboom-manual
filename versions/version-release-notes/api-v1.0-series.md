@@ -117,3 +117,19 @@ This version was released on March 2nd, 2024.
 
 * Updated Terminaux
 * Added an option to show operating system and BassBoom info
+
+## Version 0.1.0
+
+This version was released on May 31st, 2024.
+
+### Improvements (Basolia)
+
+* Added radio station support
+* Added support for ARM64 on macOS and Windows
+* Fixed some bugs
+* General improvements
+
+### Improvements (CLI music player)
+
+* Updated Terminaux
+* Added more seeking options

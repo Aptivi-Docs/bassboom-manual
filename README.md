@@ -10,6 +10,15 @@ BassBoom is a music player made with C# using the fast mpg123 library as the nat
 
 This library is a viable library aimed for cross-platform music playing because we've selected mpg123 as the MP3 backend library for its ease of use and for its fast music playback. This library is frictionless as it aims for stability and cross-platform compatibility.
 
+In addition to your regular music files, BassBoom also supports online MPEG radio stations that you can use to play your own favorite radio stations, as long as they don't use AAC or any other codec that BassBoom doesn't support.
+
+{% hint style="info" %}
+When using BassBoom, here are the notes to consider:
+
+* This library only supports MPEG audio files. Unfortunately, this means no AAC and AAC+ support and no support for other non-MPEG audio files.
+* If you found a radio station that only uses AAC, try to consult the radio station host for an MPEG version of the radio station stream, if available.
+{% endhint %}
+
 To learn more about mpg123, visit this site:
 
 {% embed url="https://mpg123.de/" %}

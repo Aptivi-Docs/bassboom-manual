@@ -2,7 +2,7 @@
 description: What's being said in your song?
 ---
 
-# 🎙 Lyrics
+# 🎙️ Lyrics
 
 Just use the `LyricReader` class that contains:
 
@@ -74,3 +74,7 @@ foreach (var ts in lyricLines)
     }
 }
 ```
+
+{% hint style="danger" %}
+Radio stations never support lyrics, since this requires the radio stream to be seekable, which is impossible for online radio stations as they're audible "livestreams".
+{% endhint %}

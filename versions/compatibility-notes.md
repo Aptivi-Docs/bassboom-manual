@@ -2,7 +2,7 @@
 description: If you want to upgrade, here's your guide to update your apps.
 ---
 
-# 🗒 Compatibility Notes
+# 🗒️ Compatibility Notes
 
 When you upgrade BassBoom to a version that contains a higher API version that you have, you'll need to follow the compatibility notes.
 
@@ -24,4 +24,65 @@ As a result, we've removed fugitive mode.
 
 {% hint style="danger" %}
 We advise you to stop using this mode.
+{% endhint %}
+
+## From 0.0.3.x to 0.1.0.x
+
+When upgrading BassBoom from 0.0.3.x to 0.1.0.x, you need to consider the following changes:
+
+### Removed CachedSongInfo
+
+{% code title="CachedSongInfo.cs" lineNumbers="true" %}
+```csharp
+public class CachedSongInfo
+```
+{% endcode %}
+
+This class wasn't meant to be in the Basolia library, but it was put there as a temporary placeholder for the playlist system, which was going to be introduced to the Basolia library. However, Basolia didn't get this system, so we had to remove this while thinking of better ways to implement this class.
+
+{% hint style="info" %}
+For now, you can host your own `CachedSongInfo` class while we come up with better ways to implement the caching system.
+{% endhint %}
+
+### Internalized the native part of the library
+
+For security reasons, we've made [this commit](https://github.com/Aptivi/BassBoom/commit/a9286743928217d0f03955f4476b34bc5827e0af#diff-20357a26bcea3043b9175a19fc3be3f849b3d4011cec3633e63ff71495d5f0d6) that internalizes the sensitive parts of the library (the ones with the P/Invoke signatures). This is so that Basolia stays the best way to use the whole BassBoom library and the program.
+
+{% hint style="danger" %}
+It's advisable that you stop making direct calls to the MPG123 library functions and start using the Basolia library. If you still want a feature that Basolia doesn't provide, head to the [Issues](https://github.com/Aptivi/BassBoom/issues) tab.
+
+This commit serves as a stepping stone to the full extensibility and flexibility to the library.
+{% endhint %}
+
+### SHOUTcast exceptions cleanup
+
+{% code title="Affected classes" lineNumbers="true" %}
+```csharp
+public class ShoutcastStreamParseException : Exception
+public class ShoutcastServerException : Exception
+```
+{% endcode %}
+
+`ShoutcastServerException` has been renamed to `BasoliaMiscException` to cover all the possible exceptions that don't require or provide the MPG123 error code that is provided by the native part of the library.
+
+Likewise, `ShoutcastStreamParseException` has been removed for the introduction of the IceCast radio querying feature.
+
+{% hint style="info" %}
+If you want to continue handling these exceptions, you must update your handler to catch the `BasoliaMiscException` instances, though it might also catch all the unrelated instances of the same exception.
+{% endhint %}
+
+### Removed extra Basolia initialization checking function
+
+{% code title="InitBasolia.cs" lineNumbers="true" %}
+```csharp
+public static bool IsInited()
+```
+{% endcode %}
+
+This function was accidentally implemented during the alpha stages of Basolia, which led to the implementation of the `BasoliaInitialized` property to make users aware that properties to query the status of the library's initialization state are better than single-line functions in terms of semantics.
+
+As a result, the above function was removed to reduce confusion.
+
+{% hint style="info" %}
+You need to replace calls to this function with the `BasoliaInitialized` property as both of them exhibit the same behavior.
 {% endhint %}

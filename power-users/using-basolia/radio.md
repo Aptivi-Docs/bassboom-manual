@@ -4,15 +4,11 @@ description: You're now listening to an FM radio station!
 
 # 📻 Radio
 
-BassBoom provides you with the Internet radio features, such as playing them and getting information about your favorite radio station.
+BassBoom provides you with the Internet radio features, such as playing them and getting information about your favorite radio station. You can use the `FileTools.OpenUrl()` function to open the MPG123 handle to the radio station URL, assuming that said station uses MPEG and not AAC or other formats. Use the `PlaybackTools.Play()`, as usual, to play the radio station.
 
-{% hint style="info" %}
-This feature is currently undone, and will be done as soon as possible after conducting tests.
-{% endhint %}
+If you want to get your favorite internet radio station's information, you can use the `GetRadioInfo` function from the `RadioTools` class in the `BassBoom.Basolia.Radio` namespace.
 
-If you want to get your favorite internet radio station's information, you can use the `ShoutcastServer` class from the `BassBoom.Basolia.Radio` namespace.
-
-Once you have the server host name and the port, you can create a new instance of the `ShoutcastServer` class and call either `Refresh()` or `RefreshAsync()` to fetch the following info from the server:
+Afterwards, you can call either `Refresh()` or `RefreshAsync()` to fetch the following info from the server:
 
 * `ServerHost`
   * Server IP address
@@ -22,8 +18,10 @@ Once you have the server host name and the port, you can create a new instance o
   * Server IP address with port
 * `ServerHttps`
   * Whether the Shoutcast server is using HTTPS or not
+* `ServerType`
+  * Radio server type
 * `ServerVersion`
-  * Server version (1.x, 2.x)
+  * \[SHOUTcast] Server version (1.x, 2.x)
 * `TotalStreams`
   * Total number of streams in the server
 * `ActiveStreams`
@@ -33,13 +31,13 @@ Once you have the server host name and the port, you can create a new instance o
 * `PeakListeners`
   * How many listeners did the server ever get at peak times?
 * `MaxListeners`
-  * How many people can listen to the server?
+  * \[SHOUTcast] How many people can listen to the server?
 * `UniqueListeners`
-  * How many unique listeners are there?
+  * \[SHOUTcast] How many unique listeners are there?
 * `AverageTime`
-  * Average time on any active listener connections in seconds
+  * \[SHOUTcast] Average time on any active listener connections in seconds
 * `AverageTimeSpan`
-  * Average time on any active listener connections in the time span
+  * \[SHOUTcast] Average time on any active listener connections in the time span
 * `Streams`
   * Available streams and their statistics
 
@@ -52,13 +50,13 @@ Stream information class, `StreamInfo`, contains the following variables:
 * `PeakListeners`
   * How many listeners did the stream ever get at peak times?
 * `MaxListeners`
-  * How many people can listen to the stream?
+  * \[SHOUTcast] How many people can listen to the stream?
 * `UniqueListeners`
-  * How many unique listeners are there?
+  * \[SHOUTcast] How many unique listeners are there?
 * `AverageTime`
-  * Average time on any active listener connections in seconds
+  * \[SHOUTcast] Average time on any active listener connections in seconds
 * `AverageTimeSpan`
-  * Average time on any active listener connections in the time span
+  * \[SHOUTcast] Average time on any active listener connections in the time span
 * `StreamGenre` -> `StreamGenre5`
   * The stream genre
 * `StreamHomepage`
@@ -68,23 +66,23 @@ Stream information class, `StreamInfo`, contains the following variables:
 * `SongTitle`
   * Song title
 * `StreamHits`
-  * Stream hits
+  * \[SHOUTcast] Stream hits
 * `StreamStatus`
-  * Stream status
+  * \[SHOUTcast] Stream status
 * `BackupStatus`
-  * Backup stream status
+  * \[SHOUTcast] Backup stream status
 * `StreamListed`
   * Is the stream listed?
 * `StreamPath`
   * Path to stream
 * `StreamUptime`
-  * Stream uptime in seconds
+  * \[SHOUTcast] Stream uptime in seconds
 * `StreamUptimeSpan`
-  * Stream uptime in the time span
+  * \[SHOUTcast] Stream uptime in the time span
 * `BitRate`
   * Stream bitrate in kbps
 * `SampleRate`
-  * Sampling rate in Hz
+  * \[SHOUTcast] Sampling rate in Hz
 * `MimeInfo`
   * MIME info for stream, usually audio/mpeg.
 
