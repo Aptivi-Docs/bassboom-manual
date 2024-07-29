@@ -86,3 +86,21 @@ As a result, the above function was removed to reduce confusion.
 {% hint style="info" %}
 You need to replace calls to this function with the `BasoliaInitialized` property as both of them exhibit the same behavior.
 {% endhint %}
+
+## From 0.1.0.x to 0.1.4.x
+
+When upgrading BassBoom from 0.1.0.x to 0.1.4.x, you need to consider the following changes:
+
+### Exception classes have been rearranged
+
+{% code title="Basolia*Exception.cs" lineNumbers="true" %}
+```csharp
+namespace BassBoom.Basolia
+```
+{% endcode %}
+
+The Basolia exceptions have been moved to `BassBoom.Basolia.Exceptions` to better arrange the exception classes.
+
+{% hint style="info" %}
+You need to change the imports clause to `BassBoom.Basolia.Exceptions`. If you're still using functions found in the `BassBoom.Basolia` namespace, you need to add an extra imports clause pointing to the `Exceptions` namespace.
+{% endhint %}
