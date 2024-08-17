@@ -133,3 +133,71 @@ This version was released on May 31st, 2024.
 
 * Updated Terminaux
 * Added more seeking options
+
+## Version 0.1.1
+
+This version was released on June 29th, 2024.
+
+### Improvements (Basolia)
+
+* Improved Icecast compatibility by IceFixing some bugs
+
+## Version 0.1.2
+
+This version was released on Jul 10th, 2024.
+
+### Improvements (Basolia)
+
+* Updated libraries
+* Improved the radio track algorithm
+
+## Version 0.1.3
+
+This version was released on July 22nd, 2024.
+
+### Improvements (Basolia)
+
+* General improvements and bug fixes
+
+## Version 0.1.4
+
+This version was released on July 28th, 2024.
+
+### Improvements (Basolia)
+
+* General improvements
+
+## Version 0.1.4.1
+
+This version was released on July 28th, 2024.
+
+### Improvements (Basolia)
+
+* Root path is now considered when searching for `libwinpthread-1`
+
+## Version 0.1.5
+
+This version was released on August 1st, 2024.
+
+### Improvements (Basolia)
+
+* Used SpecProbe.Loader
+* Updated all libraries
+
+## Version 0.1.6
+
+This version was released on August 10th, 2024.
+
+### Improvements (Basolia)
+
+* Updated MPG123
+* Improved support for Windows ARM64
+* Removed all 32-bit architecture support
+
+## Version 0.1.6.1
+
+This version was released on August 13th, 2024.
+
+### Improvements (Basolia)
+
+* Updated SpecProbe
