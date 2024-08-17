@@ -6,6 +6,10 @@ description: Welcome to BassBoom!
 
 <figure><img src=".gitbook/assets/BB.Cli.png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="info" %}
+32-bit platforms are no longer supported as of BassBoom v1.6.0. If you still want to target 32-bit platforms, you can use v1.5.0 or lower, but you'll miss out all the new groovy features and improvements.
+{% endhint %}
+
 BassBoom is a music player made with C# using the fast mpg123 library as the native backend that handles the music playback and song information, including the playback device information.
 
 This library is a viable library aimed for cross-platform music playing because we've selected mpg123 as the MP3 backend library for its ease of use and for its fast music playback. This library is frictionless as it aims for stability and cross-platform compatibility.
