@@ -16,20 +16,20 @@ You can get a duration of the whole music file using either the samples count or
 
 ```csharp
 // Total samples count
-public static int GetDuration(bool scan)
+public static int GetDuration(BasoliaMedia? basolia, bool scan)
 
 // Time span
-public static TimeSpan GetDurationSpan(bool scan)
+public static TimeSpan GetDurationSpan(BasoliaMedia? basolia, bool scan)
 ```
 
 Additionally, if you have a number of samples, such as what `GetDuration()` returned, you can use one of the following functions:
 
 ```csharp
 // Format info is not known
-public static TimeSpan GetDurationSpanFromSamples(int samples)
+public static TimeSpan GetDurationSpanFromSamples(BasoliaMedia? basolia, int samples)
 
 // Format info is known
-public static TimeSpan GetDurationSpanFromSamples(int samples, (long rate, int channels, int encoding) formatInfo)
+public static TimeSpan GetDurationSpanFromSamples(int samples, long rate)
 ```
 
 ### Frame size and length
@@ -38,10 +38,10 @@ If you want to know the frame size of your music file and its length, you can us
 
 ```csharp
 // Frame size
-public static int GetFrameSize()
+public static int GetFrameSize(BasoliaMedia? basolia)
 
 // Frame length
-public static int GetFrameLength()
+public static int GetFrameLength(BasoliaMedia? basolia)
 ```
 
 ### Samples per frame
@@ -49,7 +49,7 @@ public static int GetFrameLength()
 If you want to know the number of MPEG samples per single frame, you can use the below function:
 
 ```csharp
-public static int GetSamplesPerFrame()
+public static int GetSamplesPerFrame(BasoliaMedia? basolia)
 ```
 
 ### Getting buffer size
@@ -57,7 +57,7 @@ public static int GetSamplesPerFrame()
 To get the buffer size for your music file, you'll have to call the `GetBufferSize()` function.
 
 ```csharp
-public static int GetBufferSize()
+public static int GetBufferSize(BasoliaMedia? basolia)
 ```
 
 ### ID3v2, ID3v1, and ICY metadata
@@ -65,8 +65,8 @@ public static int GetBufferSize()
 To gather the ID3v2, ID3v1, and ICY metadata, the two functions provide you information about the music file:
 
 ```csharp
-public static void GetId3Metadata(out Id3V1Metadata managedV1, out Id3V2Metadata managedV2)
-public static string GetIcyMetadata()
+public static void GetId3Metadata(BasoliaMedia? basolia, out Id3V1Metadata managedV1, out Id3V2Metadata managedV2)
+public static string GetIcyMetadata(BasoliaMedia? basolia)
 ```
 
 The ID3v2 metadata contains the following information:
@@ -97,7 +97,7 @@ The ID3v1 metadata contains the following information:
 To get the complete frame information about your music file, you need to call the `GetFrameInfo()` function:
 
 ```csharp
-public static FrameInfo GetFrameInfo()
+public static FrameInfo GetFrameInfo(BasoliaMedia? basolia)
 ```
 
 A single `FrameInfo` instance returned by the above function contains the following information:
@@ -122,7 +122,7 @@ In addition to the audio information tools, this library also ships the formatti
 To get format information for a song, you can use the GetFormatInfo() function that allows you to get a bit rate, number of channels, and the encoding used in a song:
 
 ```csharp
-public static (long rate, int channels, int encoding) GetFormatInfo()
+public static (long rate, int channels, int encoding) GetFormatInfo(BasoliaMedia? basolia)
 ```
 
 ### Getting list of supported formats
@@ -130,7 +130,7 @@ public static (long rate, int channels, int encoding) GetFormatInfo()
 In addition to getting a single format information, you can also get a list of supported formats that are supported by the sound device. This can be achieved by calling the `GetFormats()` function:
 
 ```csharp
-public static FormatInfo[] GetFormats()
+public static FormatInfo[] GetFormats(BasoliaMedia? basolia)
 ```
 
 A single `FormatInfo` instance contains three properties:
@@ -148,7 +148,7 @@ In order for BassBoom to play songs, they must be decoded before the resulting a
 To manually decode a frame, you must use the `DecodeFrame()` function. Most of the time, you don't need to call it; BassBoom's Basolia will automatically call it for you when playback is commenced.
 
 ```csharp
-public static int DecodeFrame(ref int num, ref byte[] audio, ref int bytes)
+public static int DecodeFrame(BasoliaMedia? basolia, ref int num, ref byte[] audio, ref int bytes)
 ```
 
 ### Get/Set current decoder
@@ -156,14 +156,15 @@ public static int DecodeFrame(ref int num, ref byte[] audio, ref int bytes)
 If you want to get the current decoder or if you want to set the current decoder to something else, you need to use the `Decoder` property.
 
 ```csharp
-public static string Decoder
+public static string GetCurrentDecoder(BasoliaMedia? basolia)
+public static void SetCurrentDecoder(BasoliaMedia? basolia, string decoderName)
 ```
 
 {% hint style="info" %}
 Make sure that you're using a decoder that's supported for your device. Otherwise, you'll get an error saying that the required decoder is not supported.
 {% endhint %}
 
-### Get current decoders
+### Get all decoders
 
 If you want to either get all the decoders that are implemented in the distributed version of MPG123 library, or if you want to get all the decoders that your system can use, you'll need to use the `GetDecoders` function.
 

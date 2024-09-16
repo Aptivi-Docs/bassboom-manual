@@ -4,15 +4,19 @@ description: How to use BassBoom.Basolia
 
 # 💻 Using Basolia
 
-Usage of the Basolia library may not look easy at first, but they will look easy once you get used to it and its syntax. In order to be able to use BassBoom Basolia functions, you need to initialize it using a function  called `InitBasolia.Init()`. This allows you to initialize the Basolia library either using your default executable directory or using your customized directory that contains the `runtimes` folder that contains the mpg123 libraries, such as in the case of Nitrocid.BassBoom addon.
+Usage of the Basolia library may not look easy at first, but they will look easy once you get used to it and its syntax. In order to be able to use BassBoom Basolia functions, you need to make a new instance of the `BasoliaMedia` class. This allows you to initialize the Basolia library either using your default executable directory or using your customized directory that contains the `runtimes` folder that contains the mpg123 libraries, such as in the case of Nitrocid.BassBoom addon.
 
 {% code title="Somewhere in your code" lineNumbers="true" %}
 ```csharp
-InitBasolia.Init();
+basoliaMedia = new BasoliaMedia();
 ```
 {% endcode %}
 
 A music player built with BassBoom is provided with the base BassBoom source code. You can read its source code [here](https://github.com/Aptivi/BassBoom/blob/main/BassBoom.Cli/CliBase/).
+
+{% hint style="info" %}
+You'll need to give an instance of `BasoliaMedia` to the Basolia functions that require it.
+{% endhint %}
 
 The Basolia library is categorized to six categories:
 
@@ -30,3 +34,7 @@ Each category has its own page, so click on one of the pages in the left side pa
 * **OutLibVersion**: Gives you the OUT123 version shipped with the `BassBoom.Native` NuGet package.
 * **SynLibVersion**: Gives you the SYN123 version shipped with the `BassBoom.Native` NuGet package.
 * **BasoliaVersion**: Gives you the `BassBoom.Basolia` version.
+
+{% hint style="info" %}
+In case you need to manually initialize the Basolia library, you can use the `InitBasolia.Init()` function.
+{% endhint %}

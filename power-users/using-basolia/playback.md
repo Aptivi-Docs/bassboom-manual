@@ -15,13 +15,13 @@ The playback tools shipped with the Basolia library is a key feature for every s
 There are two ways to play the music: synchronously and asynchronously. For normal console applications, you'd typically use `Play()` for a single audio player, or this function in a thread for a music player, such as BassBoom.Cli.
 
 ```csharp
-public static void Play()
+public static void Play(BasoliaMedia? basolia)
 ```
 
 However, for GUI application, it's best to use the asynchronous version whenever possible, `PlayAsync()`, to avoid blocking the main thread.
 
 ```csharp
-public static async Task PlayAsync()
+public static async Task PlayAsync(BasoliaMedia? basolia)
 ```
 
 ### Pausing and stopping music
@@ -29,8 +29,8 @@ public static async Task PlayAsync()
 If you want to pause the music, you can use the `Pause()` function. It'll stop the music, but stays at the current position. If you want to start over, you can use the `Stop()` function.
 
 ```csharp
-public static void Pause()
-public static void Stop()
+public static void Pause(BasoliaMedia? basolia)
+public static void Stop(BasoliaMedia? basolia)
 ```
 
 ### Volume Controls
@@ -38,7 +38,7 @@ public static void Stop()
 For controlling the volume that the Basolia library controls, you can use both the `SetVolume()` and the `GetVolume()` functions. `SetVolume()` allows you to set the current volume to the new volume from 0.0 (0%) to 1.0 (100%).
 
 ```csharp
-public static void SetVolume(double volume)
+public static void SetVolume(BasoliaMedia? basolia, double volume)
 ```
 
 Getting the current volume using the `GetVolume()` function returns three variables that describe the following:
@@ -48,21 +48,21 @@ Getting the current volume using the `GetVolume()` function returns three variab
 * `decibelsRva`: The RVA value in decibels (dB)
 
 ```csharp
-public static (double baseLinear, double actualLinear, double decibelsRva) GetVolume()
+public static (double baseLinear, double actualLinear, double decibelsRva) GetVolume(BasoliaMedia? basolia)
 ```
 
 ### Playback states
 
-When either Play(), Pause(), or Stop() functions are called, the playback state changes, depending on the action. You can get the current playback state by using the `State` property.
+When either `Play()`, `Pause()`, or `Stop()` functions are called, the playback state changes, depending on the action. You can get the current playback state by using the `GetState` function.
 
 ```csharp
-public static PlaybackState State
+public static PlaybackState GetState(BasoliaMedia? basolia)
 ```
 
-You can also quickly determine whether Basolia is busy playing a song using the `Playing` property:
+You can also quickly determine whether Basolia is busy playing a song using the `IsPlaying` function:
 
 ```csharp
-public static bool Playing
+public static bool IsPlaying(BasoliaMedia? basolia)
 ```
 
 The playback states are the following:
@@ -80,13 +80,13 @@ In addition to the playback tools, you can also get access to the positioning to
 You can get the current duration in two units: Samples and time span. If you want to get the current duration using the samples, you can use the `GetCurrentDuration()` function:
 
 ```csharp
-public static int GetCurrentDuration()
+public static int GetCurrentDuration(BasoliaMedia? basolia)
 ```
 
 Similarly, you can also get the current duration in the timespan for easier representation by using the `GetCurrentDurationSpan()` function:
 
 ```csharp
-public static TimeSpan GetCurrentDurationSpan()
+public static TimeSpan GetCurrentDurationSpan(BasoliaMedia? basolia)
 ```
 
 ### Seeking controls
@@ -95,10 +95,21 @@ If you want to seek the music file either to a selected position using a frame n
 
 ```csharp
 // For seeking to the beginning
-public static void SeekToTheBeginning()
+public static void SeekToTheBeginning(BasoliaMedia? basolia)
 
 // For seeking to a specific MPEG frame
-public static void SeekToFrame(int frame)
+public static void SeekToFrame(BasoliaMedia? basolia, int frame)
+
+// For seeking to a specific lyric line
+public static void SeekLyric(BasoliaMedia? basolia, LyricLine lyricLine)
+```
+
+### Dropping MPEG frames
+
+If you want to flush all MPEG frames to the device for any reason, you can use this function:
+
+```csharp
+public static void Drop(BasoliaMedia? basolia)
 ```
 
 ## Equalizer tools
@@ -114,7 +125,7 @@ You can run this tool on either left, right, or both speakers.
 If you want to get the current equalizer values, you can use the below function:
 
 ```csharp
-public static double GetEqualizer(mpg123_channels channels, int bandIdx)
+public static double GetEqualizer(BasoliaMedia? basolia, mpg123_channels channels, int bandIdx)
 ```
 
 ### Setting equalizer values
@@ -123,10 +134,10 @@ If you want to set the equalizer values for one or more bands to make your music
 
 ```csharp
 // For one band
-public static void SetEqualizer(mpg123_channels channels, int bandIdx, double value)
+public static void SetEqualizer(BasoliaMedia? basolia, mpg123_channels channels, int bandIdx, double value)
 
 // For more than one bands
-public static void SetEqualizerRange(mpg123_channels channels, int bandIdxStart, int bandIdxEnd, double value)
+public static void SetEqualizerRange(BasoliaMedia? basolia, mpg123_channels channels, int bandIdxStart, int bandIdxEnd, double value)
 ```
 
 ### Resetting equalizer values
@@ -134,7 +145,7 @@ public static void SetEqualizerRange(mpg123_channels channels, int bandIdxStart,
 If you want to reset the equalizer values to their natural states (`1.00`), you can use the below function:
 
 ```csharp
-public static void ResetEqualizer()
+public static void ResetEqualizer(BasoliaMedia? basolia)
 ```
 
 ### Getting native state
@@ -142,7 +153,7 @@ public static void ResetEqualizer()
 If you want to get the native state of the output stream that represents the currently playing music, you can use this function:
 
 ```csharp
-public static (long, double) GetNativeState(mpg123_state state)
+public static (long, double) GetNativeState(BasoliaMedia? basolia, mpg123_state state)
 ```
 
 The `mpg123_state` enumeration has the following states for you to get:

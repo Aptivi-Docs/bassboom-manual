@@ -104,3 +104,31 @@ The Basolia exceptions have been moved to `BassBoom.Basolia.Exceptions` to bette
 {% hint style="info" %}
 You need to change the imports clause to `BassBoom.Basolia.Exceptions`. If you're still using functions found in the `BassBoom.Basolia` namespace, you need to add an extra imports clause pointing to the `Exceptions` namespace.
 {% endhint %}
+
+## From 0.1.4.x to 0.2.0.x
+
+When upgrading BassBoom from 0.1.4.x to 0.2.0.x, you need to consider the following changes:
+
+### `BasoliaMedia` introduced
+
+{% code title="PlaybackTools.cs" lineNumbers="true" %}
+```csharp
+public static void Play()
+public static void Pause()
+public static void Stop()
+```
+{% endcode %}
+
+We've introduced a brand new class, `BasoliaMedia`, that stores the states and the appropriate native library handles to ensure simultaneous operation. As a result, we had to edit all the Basolia functions so that you'd need to provide an instance of `BasoliaMedia` that you want to perform an action on.
+
+We also had to edit the following properties:
+
+* `Playing` -> `IsPlaying()`
+* `State` -> `GetState()`
+* `RadioIcy` -> `GetRadioIcy()`
+* `RadioNowPlaying` -> `GetRadioNowPlaying()`
+* `Decoder` -> `GetCurrentDecoder()` and `SetCurrentDecoder()`
+
+{% hint style="info" %}
+You'll need to create a new instance of `BasoliaMedia` before being able to use this library to its fullest extent.
+{% endhint %}
