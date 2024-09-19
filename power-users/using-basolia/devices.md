@@ -45,10 +45,18 @@ public static void SetActiveDevice(BasoliaMedia? basolia, string driver, string 
 public static (string driver, string device) GetCurrent(BasoliaMedia? basolia)
 
 // Cached
-public static (string driver, string device) GetCurrentCached()
+public static (string driver, string device) GetCurrentCached(BasoliaMedia? basolia)
 ```
 
 If you want to know your current device and driver that are being used by MPG123 to play music from, you'll need to use one of the following functions:
 
 * `GetCurrent()`: Gets the current driver and device that MPG123 reports
 * `GetCurrentCached()`: Gets the cached current driver and device that Basolia reports
+
+### Resetting current driver and device
+
+```csharp
+public static void Reset(BasoliaMedia? basolia)
+```
+
+If you want to reset the current driver and device to their default values, you can use this function. This resets to your primary output device determined by your operating system.

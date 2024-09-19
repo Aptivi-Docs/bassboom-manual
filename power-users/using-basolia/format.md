@@ -113,6 +113,22 @@ A single `FrameInfo` instance returned by the above function contains the follow
 * `AbrRate`: Average bitrate
 * `Vbr`: Variable bitrate mode
 
+### Safe buffer size
+
+If you want to know the size of a generic buffer, you can use this function.
+
+```csharp
+public static int GetGenericBufferSize()
+```
+
+### Getting seconds per frame
+
+If you want to get an MPEG frame length in seconds, which can be a fraction of a second, you can make use of this function:
+
+```csharp
+public static double GetSecondsPerFrame(BasoliaMedia? basolia)
+```
+
 ## Format tools
 
 In addition to the audio information tools, this library also ships the formatting tools that allow you to get format info for a song.
@@ -138,6 +154,79 @@ A single `FormatInfo` instance contains three properties:
 * `Rate`: A bit rate
 * `Channels`: Number of channels in a song file
 * `Encoding`: Song encoding
+
+### Getting list of supported rates
+
+This function that is defined below allows you to get a list of all the supported rates that your device and your driver can play.
+
+```csharp
+public static int[] GetRates()
+```
+
+{% hint style="warning" %}
+You'll need to cast a value from this array to `long` before being able to use it in Basolia functions that require this value.
+{% endhint %}
+
+### Getting list of supported encodings
+
+This function that is defined below allows you to get a list of all the supported encodings that your device and your driver can play.
+
+```csharp
+public static int[] GetEncodings()
+```
+
+### Getting encoder name and description
+
+If you want to be more elaborate by describing an encoder from an encoder ID for clarity, you can use the two functions that both help you get the name and the description, respectively:
+
+```csharp
+public static string GetEncodingName(int encoding)
+public static string GetEncodingDescription(int encoding)
+```
+
+### Format support check
+
+If you want to check to see if a particular rate and encoding is supported, you can use this function's return value to determine support, along with an out parameter that tells you if it's supported in mono, stereo, or both.
+
+```csharp
+public static bool IsFormatSupported(BasoliaMedia? basolia, long rate, int encoding, out ChannelCount channelCount)
+```
+
+### Encoding size
+
+If you want to get the encoding size in bytes, you can use this function:
+
+```csharp
+public static int GetEncodingSize(int encoding)
+```
+
+### Format usage
+
+There are three modes into which the Basolia media instance accepts formats:
+
+* No format: This means that no format will be accepted, and any operation that requires format to be set up, such as playback, will error out.
+* All formats: This means that all formats will be accepted, as long as they're one of the supported formats.
+* Specific format: This means that only this specific format that you've specified in your code will be accepted.
+
+```csharp
+// No format
+public static void NoFormat(BasoliaMedia? basolia)
+
+// All formats
+public static void AllFormats(BasoliaMedia? basolia)
+
+// Specific format
+public static void UseFormat(BasoliaMedia? basolia, long rate, ChannelCount channels, int encoding)
+```
+
+### PCM samples
+
+If you want to get generic information about the PCM samples, such as getting a PCM sample size in bytes or a zero sample size, you can use the following two functions:
+
+```csharp
+public static int GetSampleSize(int encoding)
+public static int GetZeroSample(int encoding, int sampleSize, int lsbOffset)
+```
 
 ## Decode tools
 

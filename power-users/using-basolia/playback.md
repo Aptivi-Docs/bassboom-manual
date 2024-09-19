@@ -35,10 +35,10 @@ public static void Stop(BasoliaMedia? basolia)
 
 ### Volume Controls
 
-For controlling the volume that the Basolia library controls, you can use both the `SetVolume()` and the `GetVolume()` functions. `SetVolume()` allows you to set the current volume to the new volume from 0.0 (0%) to 1.0 (100%).
+For controlling the volume that the Basolia library controls, you can use both the `SetVolume()` and the `GetVolume()` functions. `SetVolume()` allows you to set the current volume to the new volume from 0.0 (0%) to 1.0 (100%). Additionally, if you've enabled the volume boost option, you can set the volume up to 3.0 (300%), though this may cause audio artifacts in some cases where parts of an audio file is loud.
 
 ```csharp
-public static void SetVolume(BasoliaMedia? basolia, double volume)
+public static void SetVolume(BasoliaMedia? basolia, double volume, bool volBoost = false)
 ```
 
 Getting the current volume using the `GetVolume()` function returns three variables that describe the following:
@@ -70,6 +70,42 @@ The playback states are the following:
 * `Stopped`: Music has either stopped or not played yet
 * `Playing`: Music is playing
 * `Paused`: Music has been paused by the user or by the call to the `Pause()` function
+
+### Opening the output
+
+If you want to open the output to your selected device and driver or to a pre-determined device and driver as selected by your OS, you can use the below function:
+
+```csharp
+public static void OpenOutput(BasoliaMedia? basolia)
+```
+
+{% hint style="info" %}
+You don't usually need to call this function, unless you have a reason to. Playback tools already use this function internally.
+{% endhint %}
+
+### Starting the output
+
+If you want to start the output at a selected rate, channel count, and encoding, you can use the below function:
+
+```csharp
+public static void StartOutput(BasoliaMedia? basolia, long rate, ChannelCount channels, int encoding)
+```
+
+{% hint style="info" %}
+You don't usually need to call this function, unless you have a reason to. Playback tools already use this function internally.
+{% endhint %}
+
+### Closing the output
+
+If you no longer want to output anything, you can use this function:
+
+```csharp
+public static void CloseOutput(BasoliaMedia? basolia)
+```
+
+{% hint style="danger" %}
+Use this function carefully, as reckless usage could cause the underlying application to crash with an access violation error.
+{% endhint %}
 
 ## Positioning tools
 

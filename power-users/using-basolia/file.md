@@ -6,6 +6,30 @@ description: File management for BassBoom
 
 The file tools shipped with the BassBoom.Basolia library allows you to open and close a music file so that you can play music and get its information, such as the ID3v2 metadata information.
 
+### Checking for open file or URL
+
+If you want to check to see if there is a file being open in a `BasoliaMedia` instance, you can use the below function.
+
+```csharp
+public static bool IsOpened(BasoliaMedia? basolia)
+```
+
+### Checking for radio station
+
+If you want to check to see if an open file is a radio station, you can use this function, passing it your `BasoliaMedia` instance.
+
+```csharp
+public static bool IsRadioStation(BasoliaMedia? basolia)
+```
+
+### Getting current file
+
+If you want to get some information about a current file being played, you can use this function.
+
+```csharp
+public static FileType? CurrentFile(BasoliaMedia? basolia)
+```
+
 ### Opening a music file
 
 To be able to get the most out of the Basolia library, like playing MP3 files, you should call the `OpenFile()` function, pointing it to a path to a music file.

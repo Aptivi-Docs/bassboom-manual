@@ -37,6 +37,7 @@
   * [📼 Format](power-users/using-basolia/format.md)
   * [🎙️ Lyrics](power-users/using-basolia/lyrics.md)
   * [🎼 Playback](power-users/using-basolia/playback.md)
+  * [🎹 Playlists](power-users/using-basolia/playlists.md)
   * [💽 Albums](power-users/using-basolia/albums.md)
   * [📻 Radio](power-users/using-basolia/radio.md)
 
