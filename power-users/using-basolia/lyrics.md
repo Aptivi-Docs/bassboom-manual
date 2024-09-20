@@ -48,6 +48,19 @@ In case the lyric line contains time spans of when the words are said, defined l
 
 Basolia will attempt to split these words to their time spans, or `00:00` if these time spans can't be found in the line. Once this is done, Basolia will install all the lyric lines (`LyricLine` class) to the list of lines in a new `Lyric` class instance, therefore returning it for usage in your applications.
 
+A `Lyric` instance contains several functions that allow you to get various lyric lines, such as getting them from the start to the current duration, and from current duration to the end. These functions allow you to perform these operations:
+
+* `GetLinesCurrent()`: Gets all the lines from the start to the current music duration
+* `GetLinesUpcoming()`: Gets all the lines from the current music duration to the end
+* `GetLastLineCurrent()`: Gets the last lyric line from the current music duration
+* `GetLastLineWordsCurrent()`: Gets the last lyric line words from the current music duration
+* `GetLinesToSpan()`: Gets all the lines from the start to the current span
+* `GetLinesFromSpan()`: Gets all the lines from the current span to the end
+* `GetLastLineAtSpan()`: Gets the last lyric line from the given time span
+* `GetLastLineWordsAtSpan()`: Gets the last lyric line words from the given time span
+
+While the first four functions require you to specify a working Basolia media instance to deal with the current duration, the last four functions don't require this instance, but require specifying a time span representing the target duration.
+
 ### An example <a href="#an-example" id="an-example"></a>
 
 If you want a simple console app that lets you print the lyric lines as they play to simulate the lyric player feature usually found in your music player, the most minimal example of such an application is this:
