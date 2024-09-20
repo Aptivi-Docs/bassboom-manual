@@ -38,3 +38,11 @@ This version was released on September 19th, 2024, as a follow-up to the origina
 * Added loading from playlists
 * Improved the appearance
 * General improvements and fixes
+
+## Version 0.2.1.1
+
+This version was released on September 20th, 2024 to fix a critical bug.
+
+### Improvements (CLI music player)
+
+* Fixed temporary file path for Linux systems
