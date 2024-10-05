@@ -1,8 +1,9 @@
 ---
 description: How to upgrade your bootloader.
+icon: up
 ---
 
-# ⬆ Upgrading BassBoom
+# Upgrading BassBoom
 
 BassBoom can be upgraded in all supported platforms. Select your platform to get instructions.
 
@@ -16,4 +17,12 @@ BassBoom can be upgraded in all supported platforms. Select your platform to get
 
 {% content-ref url="android.md" %}
 [android.md](android.md)
+{% endcontent-ref %}
+
+## BassBoom Basolia
+
+You can follow the installation and upgrade steps by clicking on the link below to get the full instructions:
+
+{% content-ref url="https://app.gitbook.com/s/Id4bob6wnHvpX4zbVVtI/csharp-libraries/installation-and-upgrade" %}
+[Installation and Upgrade](https://app.gitbook.com/s/Id4bob6wnHvpX4zbVVtI/csharp-libraries/installation-and-upgrade)
 {% endcontent-ref %}

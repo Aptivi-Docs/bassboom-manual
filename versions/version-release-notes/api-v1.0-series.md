@@ -1,8 +1,9 @@
 ---
 description: This is just the beginning!
+icon: gem
 ---
 
-# 💎 API v1.0 series
+# API v1.0 series
 
 This series is the first version series that actually defines the multiplatform music player to the .NET environment. The first version of BassBoom, 0.0.1, was out on October 1st, 2023.
 

@@ -1,8 +1,9 @@
 ---
 description: More advanced!
+icon: gear
 ---
 
-# ⚙️ API v1.1 series
+# API v1.1 series
 
 This series is the second version series that lets you finally be more creative in your sound-centric applications.
 

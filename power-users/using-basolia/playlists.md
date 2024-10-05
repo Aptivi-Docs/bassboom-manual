@@ -1,8 +1,9 @@
 ---
 description: Play this before this...
+icon: piano-keyboard
 ---
 
-# 🎹 Playlists
+# Playlists
 
 Playlists are a group of music files or URLs that allow you to play them sequentially without having to manually add them to the queue. This is crucial for any music player that offers the queuing feature, and helps you organize them music according to your rules, such as an album, an artist, etc. Usually, the playlists come in the `.m3u` or the `.m3u8` formats, but there are other formats that define a playlist.
 

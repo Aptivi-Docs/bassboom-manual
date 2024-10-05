@@ -1,8 +1,9 @@
 ---
 description: How to use BassBoom.Basolia
+icon: laptop
 ---
 
-# 💻 Using Basolia
+# Using Basolia
 
 Usage of the Basolia library may not look easy at first, but they will look easy once you get used to it and its syntax. In order to be able to use BassBoom Basolia functions, you need to make a new instance of the `BasoliaMedia` class. This allows you to initialize the Basolia library either using your default executable directory or using your customized directory that contains the `runtimes` folder that contains the mpg123 libraries, such as in the case of Nitrocid.BassBoom addon.
 

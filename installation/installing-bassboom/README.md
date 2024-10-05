@@ -1,8 +1,9 @@
 ---
 description: How to install BassBoom to your PC
+icon: compact-disc
 ---
 
-# 📀 Installing BassBoom
+# Installing BassBoom
 
 BassBoom can be installed on all the supported platforms. The installation steps are straightforward, but must be followed in order to ensure that the kernel starts right.
 
@@ -54,3 +55,11 @@ Error: failed to fetch attestations from Aptivi: HTTP 404: Not Found (https://ap
 
 Then, your download is corrupt.
 {% endhint %}
+
+## BassBoom Basolia
+
+You can follow the installation and upgrade steps by clicking on the link below to get the full instructions:
+
+{% content-ref url="https://app.gitbook.com/s/Id4bob6wnHvpX4zbVVtI/csharp-libraries/installation-and-upgrade" %}
+[Installation and Upgrade](https://app.gitbook.com/s/Id4bob6wnHvpX4zbVVtI/csharp-libraries/installation-and-upgrade)
+{% endcontent-ref %}
