@@ -1,6 +1,6 @@
 ---
-description: More advanced!
 icon: gear
+description: More advanced!
 ---
 
 # API v1.1 series
@@ -47,3 +47,17 @@ This version was released on September 20th, 2024 to fix a critical bug.
 ### Improvements (CLI music player)
 
 * Fixed temporary file path for Linux systems
+
+## Version 0.2.2
+
+This version was released on October 7th, 2024 to bring some improvements and to add some features,
+
+### Improvements (Basolia)
+
+* Added Play/Forget playback
+* Added playing from streams
+* General improvements and fixes
+
+### Improvements (CLI music player)
+
+* Improved appearance when using disco mode

@@ -1,6 +1,6 @@
 ---
-description: File management for BassBoom
 icon: file-audio
+description: File management for BassBoom
 ---
 
 # File
@@ -38,6 +38,19 @@ To be able to get the most out of the Basolia library, like playing MP3 files, y
 ```csharp
 public static void OpenFile(BasoliaMedia? basolia, string path)
 ```
+
+### Opening a music stream
+
+To play MPEG streams, excluding radio stations, you should call the `OpenFrom()` function, pointing it to an open stream.
+
+```csharp
+public static void OpenFrom(BasoliaMedia? basolia, Stream? audioStream)
+public static async Task OpenFromAsync(BasoliaMedia? basolia, Stream? audioStream)
+```
+
+{% hint style="info" %}
+To open radio stations, consult the below function as this function doesn't parse radio metadata.
+{% endhint %}
 
 ### Opening a URL file
 
