@@ -1,6 +1,6 @@
 ---
-description: This is just the beginning!
 icon: gem
+description: This is just the beginning!
 ---
 
 # API v1.0 series
@@ -202,3 +202,27 @@ This version was released on August 13th, 2024.
 ### Improvements (Basolia)
 
 * Updated SpecProbe
+
+## Version 0.1.7
+
+This version was released on August 19th, 2024.
+
+### Improvements (Basolia)
+
+* Updated SpecProbe to 3.0.0
+
+## Version 0.1.8
+
+This version was released on September 4th, 2024.
+
+### Improvements (Basolia)
+
+* Added nullable support
+
+## Version 0.1.9
+
+This version was released on October 17th, 2024.
+
+### Improvements (Basolia)
+
+* Fixed a security issue concerning System.Text.Json
