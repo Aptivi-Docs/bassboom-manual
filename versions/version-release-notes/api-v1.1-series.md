@@ -50,7 +50,7 @@ This version was released on September 20th, 2024 to fix a critical bug.
 
 ## Version 0.2.2
 
-This version was released on October 7th, 2024 to bring some improvements and to add some features,
+This version was released on October 7th, 2024 to bring some improvements and to add some features.
 
 ### Improvements (Basolia)
 
@@ -61,3 +61,19 @@ This version was released on October 7th, 2024 to bring some improvements and to
 ### Improvements (CLI music player)
 
 * Improved appearance when using disco mode
+
+## Version 0.2.3
+
+This version was released on November 6th, 2024 to bring some improvements and to add some features.
+
+### Improvements (Basolia)
+
+* Added asynchronous Play/Forget playback
+
+## Version 0.2.4.2
+
+This version was released on November 6th, 2024 to bring some improvements and to add some features.
+
+### Improvements (Basolia)
+
+* Updated MPG123 to 1.32.9 that fixes [CVE-2024-10573](https://nvd.nist.gov/vuln/detail/CVE-2024-10573)

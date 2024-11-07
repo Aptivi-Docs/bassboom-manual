@@ -1,6 +1,6 @@
 ---
-description: Play your music!
 icon: play
+description: Play your music!
 ---
 
 # Playback
@@ -108,6 +108,46 @@ public static void CloseOutput(BasoliaMedia? basolia)
 Use this function carefully, as reckless usage could cause the underlying application to crash with an access violation error.
 {% endhint %}
 
+### Play'n'Forget
+
+If you don't want to set up a persistent `BasoliaMedia` instance for every operation, you can use this technique to implement Play'n'Forget in your applications so that you can play either a file or a stream without any difficulty. The below functions can be found in the `Independent` namespace.
+
+{% hint style="info" %}
+If you want to change a specific setting, you should create a class instance of `PlayForgetSettings` that consists of:
+
+* `Volume` (settable and constructible)
+* `VolumeBoost` (settable and constructible)
+* `RootLibPath` (constructible, but not modifiable)
+
+Be careful about the `RootLibPath` settings entry, as it gets ignored right after Basolia verifies that the library is loaded for the first time.
+{% endhint %}
+
+#### Playing a file
+
+There are two ways to play a file: synchronously and asynchronously.
+
+```csharp
+public static void PlayFile(string path, PlayForgetSettings? settings = null)
+public static async Task PlayFileAsync(string path, PlayForgetSettings? settings = null)
+```
+
+Just call one of these functions, passing it either an absolute path or a relative path to your music file, optionally passing it the Play'n'Forget settings instance.
+
+#### Playing a stream
+
+There are two ways to play a stream: synchronously and asynchronously.
+
+```csharp
+public static void PlayStream(Stream stream, PlayForgetSettings? settings = null)
+public static async Task PlayStreamAsync(Stream stream, PlayForgetSettings? settings = null)
+```
+
+Just call one of these functions, passing it a **seekable** stream containing MP3 data of your song file, optionally passing it the Play'n'Forget settings instance.
+
+{% hint style="danger" %}
+Radio stations and other non-seekable streams are not supported as Basolia requires a stream to be seekable for non-radio-station streams. In addition to that, radio stations can't be "forgotten" as it's an infinite stream.
+{% endhint %}
+
 ## Positioning tools
 
 In addition to the playback tools, you can also get access to the positioning tools to perform seek operations to jump to a specific section of a song, regardless of whether the song is playing or not.
@@ -195,10 +235,10 @@ public static (long, double) GetNativeState(BasoliaMedia? basolia, mpg123_state 
 
 The `mpg123_state` enumeration has the following states for you to get:
 
-* **MPG123\_ACCURATE**: Accurate rendering
-* **MPG123\_BUFFERFILL**: Buffer fill
-* **MPG123\_DEC\_DELAY**: Decode delay in milliseconds
-* **MPG123\_ENC\_DELAY**: Encode delay in milliseconds
-* **MPG123\_ENC\_PADDING**: Encoding padding
-* **MPG123\_FRANKENSTEIN**: Frankenstein stream?
-* **MPG123\_FRESH\_DECODER**: Fresh decoder
+* `MPG123_ACCURATE`: Accurate rendering
+* `MPG123_BUFFERFILL`: Buffer fill
+* `MPG123_DEC_DELAY`: Decode delay in milliseconds
+* `MPG123_ENC_DELAY`: Encode delay in milliseconds
+* `MPG123_ENC_PADDING`: Encoding padding
+* `MPG123_FRANKENSTEIN`: Frankenstein stream?
+* `MPG123_FRESH_DECODER`: Fresh decoder
