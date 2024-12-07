@@ -1,6 +1,6 @@
 ---
-description: Every version have their own changes.
 icon: newspaper
+description: Every version have their own changes.
 ---
 
 # Version Release Notes
@@ -15,4 +15,10 @@ Every single version of BassBoom comes with many changes, including feature addi
 
 {% content-ref url="api-v1.1-series.md" %}
 [api-v1.1-series.md](api-v1.1-series.md)
+{% endcontent-ref %}
+
+## API v2.0 series
+
+{% content-ref url="api-v2.0-series.md" %}
+[api-v2.0-series.md](api-v2.0-series.md)
 {% endcontent-ref %}

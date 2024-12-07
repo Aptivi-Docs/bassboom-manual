@@ -77,3 +77,11 @@ This version was released on November 6th, 2024 to bring some improvements and t
 ### Improvements (Basolia)
 
 * Updated MPG123 to 1.32.9 that fixes [CVE-2024-10573](https://nvd.nist.gov/vuln/detail/CVE-2024-10573)
+
+## Version 0.2.4.3
+
+This version was released on December 4th, 2024, to bring some improvements.
+
+### Improvements (Basolia)
+
+* Refactored library loading mechanism

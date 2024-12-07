@@ -7,6 +7,7 @@
 * [Version Release Notes](versions/version-release-notes/README.md)
   * [API v1.0 series](versions/version-release-notes/api-v1.0-series.md)
   * [API v1.1 series](versions/version-release-notes/api-v1.1-series.md)
+  * [API v2.0 series](versions/version-release-notes/api-v2.0-series.md)
 * [Compatibility Notes](versions/compatibility-notes.md)
 
 ## Installation
