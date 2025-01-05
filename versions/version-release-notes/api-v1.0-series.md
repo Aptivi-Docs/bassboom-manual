@@ -242,3 +242,11 @@ This version was released on December 4th, 2024, to bring some improvements.
 ### Improvements (Basolia)
 
 * Refactored library loading mechanism
+
+## Version 0.1.11
+
+This version was released on December 22nd, 2024, to bring some improvements.
+
+### Improvements (Basolia)
+
+* Updated SpecProbe
