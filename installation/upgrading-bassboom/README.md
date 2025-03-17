@@ -11,6 +11,10 @@ BassBoom can be upgraded in all supported platforms. Select your platform to get
 [windows.md](windows.md)
 {% endcontent-ref %}
 
+{% content-ref url="macos.md" %}
+[macos.md](macos.md)
+{% endcontent-ref %}
+
 {% content-ref url="linux.md" %}
 [linux.md](linux.md)
 {% endcontent-ref %}
