@@ -1,4 +1,5 @@
 ---
+description: Upgrading BassBoom on macOS
 icon: apple
 ---
 
