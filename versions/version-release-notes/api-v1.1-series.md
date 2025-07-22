@@ -80,7 +80,7 @@ This version was released on November 6th, 2024 to bring some improvements and t
 
 ## Version 0.2.4.3
 
-This version was released on December 4th, 2024, to bring some improvements.
+This version was released on December 4th, 2024 to fix a critical problem with regards to how BassBoom finds libraries.
 
 ### Improvements (Basolia)
 
@@ -88,7 +88,7 @@ This version was released on December 4th, 2024, to bring some improvements.
 
 ## Version 0.2.5
 
-This version was released on December 22nd, 2024, to bring some improvements.
+This version was released on December 22nd, 2024 to update SpecProbe.
 
 ### Improvements (Basolia)
 
@@ -96,7 +96,7 @@ This version was released on December 22nd, 2024, to bring some improvements.
 
 ## Version 0.2.6
 
-This version was released on February 28th, 2025, to bring some improvements.
+This version was released on February 28th, 2025 to update libraries.
 
 ### Improvements (Basolia)
 
@@ -104,20 +104,36 @@ This version was released on February 28th, 2025, to bring some improvements.
 
 ## Version 0.2.7
 
-This version was released on March 16th, 2025, to bring some improvements.
+This version was released on March 16th, 2025 to provide you with wider packaging choices, including the installer and the Launchpad PPA!
 
 ### Improvements (Basolia)
 
 * <mark style="color:green;">Added Docker packaging</mark>
 * <mark style="color:green;">Added Debian packaging</mark>
-* <mark style="color:green;">Added Arch Linux packaging (will be available later)</mark>
+* <mark style="color:green;">Added Arch Linux packaging</mark>
 * <mark style="color:green;">Added Windows Installer packaging</mark>
 * <mark style="color:yellow;">General improvements</mark>
 
 ## Version 0.2.8
 
-This version was released on March 17th, 2025, to bring some improvements.
+This version was released on March 17th, 2025 to improve the player appearance.
 
 ### Improvements (CLI music player)
 
 * <mark style="color:yellow;">General improvements</mark>
+
+## Version 0.2.9
+
+This version was released on May 27th, 2025 to reduce the distribution size.
+
+### Improvements (Basolia)
+
+* <mark style="color:yellow;">General improvements</mark>
+
+## Version 0.2.10
+
+This version was released on July 3rd, 2025 to add localization support.
+
+### Improvements (Basolia)
+
+* <mark style="color:green;">Added localized strings</mark>
