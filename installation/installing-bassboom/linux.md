@@ -7,9 +7,9 @@ icon: linux
 
 Before performing the installation, your Linux system must meet the following requirements:
 
-| System            | Framework                                                          | Terminal                      |
-| ----------------- | ------------------------------------------------------------------ | ----------------------------- |
-| Supported distros | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | Konsole, GNOME Terminal, etc. |
+| System            | Framework                                                            | Terminal                      |
+| ----------------- | -------------------------------------------------------------------- | ----------------------------- |
+| Supported distros | [.NET 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) | Konsole, GNOME Terminal, etc. |
 
 ## Installation
 

@@ -7,9 +7,9 @@ icon: windows
 
 Before performing the installation, your Windows system must meet the following requirements:
 
-| System     | Framework                                                          | Terminal                                                  |
-| ---------- | ------------------------------------------------------------------ | --------------------------------------------------------- |
-| Windows 7+ | [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) | [ConEmu](https://conemu.github.io/) or Windows 10 cmd.exe |
+| System      | Framework                                                            | Terminal                                                  |
+| ----------- | -------------------------------------------------------------------- | --------------------------------------------------------- |
+| Windows 10+ | [.NET 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) | [ConEmu](https://conemu.github.io/) or Windows 10 cmd.exe |
 
 We advise you to use the terminal emulation software capable of displaying the VT sequences on systems older than Windows 10. BassBoom uses Terminaux to render its elements in the CLI music player.
 

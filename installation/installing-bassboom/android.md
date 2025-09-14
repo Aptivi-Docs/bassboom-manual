@@ -37,8 +37,8 @@ Once you're done, follow the steps:
 7. Ensure that you've updated the package cache
    * `apt update`
    * `apt dist-upgrade`
-8. Install the .NET 8.0 runtime
-   * `apt install dotnet-runtime-8.0`
+8. Install the .NET 10.0 runtime
+   * `apt install dotnet-runtime-10.0`
 9. Install `wget` to download the latest release from [this page](https://github.com/Aptivi/BassBoom/releases).
    * `apt install wget`
    * `wget https://github.com/Aptivi/BassBoom/releases/download/vx.x.x/x.x.x-bin.zip`
