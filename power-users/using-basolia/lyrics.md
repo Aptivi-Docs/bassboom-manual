@@ -5,28 +5,46 @@ icon: microphone-stand
 
 # Lyrics
 
+BassBoom knows not only what music is playing, but also the words of the song by themselves. However, you'll need to provide a way for BassBoom to be able to synchronize the music with the lyrics, such as subtitling.
+
+{% hint style="info" %}
+BassBoom supports two types of `.lrc` or `.txt` lyrics:
+
+* Standard: Time in lines
+* Extended: Time in lines and words
+{% endhint %}
+
+***
+
+## <mark style="color:$primary;">Usage</mark>
+
+You can use the lyrics reader class to manage the lyrics and to make your app synchronize the lyrics with the music.
+
+<details>
+
+<summary>Usage of the <code>LyricReader</code> class</summary>
+
 Just use the `LyricReader` class that contains:
 
-* `GetLyrics(string)`
+<table><thead><tr><th width="189.3333740234375">Function</th><th>Description</th></tr></thead><tbody><tr><td><code>GetLyrics(string)</code></td><td>Obtains a list of lyrics from a <code>.lrc</code> or <code>.txt</code> file </td></tr></tbody></table>
 
-The string in this function must be a complete path to your `.lrc` or `.txt` file containing lyric information about your music. It can be of a standard form (only time in lines) and an extended form (time in lines and words). Once called, it returns a `Lyric` that contains information about your lyric, including a list of lyric lines defined with the `LyricLine` class. It contains:
+{% hint style="info" %}
+The string in this function must be a complete path to your `.lrc` or `.txt` file containing lyric information about your music.
+{% endhint %}
 
-* `string Line`: A lyric line
-* `TimeSpan LineSpan`: Time of when a lyric line gets played
-* `List<LyricLineWord> LineWords`: Group of words from the lyric line
+</details>
 
-`LyricLineWord` also contains these variables:
+***
 
-* `string Word`: A lyric word
-* `TimeSpan WordSpan`: Time of when a word gets said
+## <mark style="color:$primary;">Parsing of the lyrics</mark>
 
-Basolia starts working on your provided lyric file by reading all the lines. Then, it checks to see if the line isn't one of the following:
+Basolia starts working on your provided lyric file by reading all the lines and verifies that all lines are valid lyric lines. Then, it processes the line according to the following:
 
-* An empty line
-* A non-lyric line
-* A lyric line without a lyric line
+<details>
 
-If the line is really a lyric line, then it starts processing it by taking the time span from the line and parsing it to a `TimeSpan` and taking the lyrics from the line. Below shows the clarification of this process:
+<summary>Simple lyric line</summary>
+
+In case the lyric line contains just the time span and the lyrics, Basolia parses it to a `TimeSpan` and takes the lyrics from the line. Below shows the clarification of this process:
 
 ```
 [01:13.40]Don't believe me, just watch!
@@ -35,6 +53,12 @@ If the line is really a lyric line, then it starts processing it by taking the t
   |        \- Lyric line
   \---------- Time of the lyric
 ```
+
+</details>
+
+<details>
+
+<summary>Complex lyric line</summary>
 
 In case the lyric line contains time spans of when the words are said, defined like below:
 
@@ -47,22 +71,49 @@ In case the lyric line contains time spans of when the words are said, defined l
   \--------------------- Time of when the line is said
 ```
 
-Basolia will attempt to split these words to their time spans, or `00:00` if these time spans can't be found in the line. Once this is done, Basolia will install all the lyric lines (`LyricLine` class) to the list of lines in a new `Lyric` class instance, therefore returning it for usage in your applications.
+Basolia will attempt to split these words to their time spans, or `00:00` if these time spans can't be found in the line.
+
+</details>
+
+Once this is done, Basolia will install all the lyric lines (`LyricLine` class) to the list of lines in a new `Lyric` class instance, therefore returning it for usage in your applications.
+
+***
+
+## <mark style="color:$primary;">Structure of the lyrics</mark>
+
+The structure of the lyrics, which the lyrics reader class uses, is defined by Basolia to simplify the process of processing the lyrics.
+
+<details>
+
+<summary>Lyric class properties</summary>
+
+The function returns a `Lyric` that contains information about your lyric, including a list of lyric lines defined with the `LyricLine` class. It contains:
+
+<table><thead><tr><th width="119.6666259765625">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>Line</code></td><td>A lyric line</td></tr><tr><td><code>LineSpan</code></td><td>Time of when a lyric line gets played</td></tr><tr><td><code>LineWords</code></td><td>Group of words from the lyric line</td></tr></tbody></table>
+
+`LyricLineWord` also contains these variables:
+
+<table><thead><tr><th width="119.6666259765625">Property</th><th>Description</th></tr></thead><tbody><tr><td><code>Word</code></td><td>A lyric word</td></tr><tr><td><code>WordSpan</code></td><td>Time of when a word gets said</td></tr></tbody></table>
+
+</details>
+
+<details>
+
+<summary>Lyric class functions</summary>
 
 A `Lyric` instance contains several functions that allow you to get various lyric lines, such as getting them from the start to the current duration, and from current duration to the end. These functions allow you to perform these operations:
 
-* `GetLinesCurrent()`: Gets all the lines from the start to the current music duration
-* `GetLinesUpcoming()`: Gets all the lines from the current music duration to the end
-* `GetLastLineCurrent()`: Gets the last lyric line from the current music duration
-* `GetLastLineWordsCurrent()`: Gets the last lyric line words from the current music duration
-* `GetLinesToSpan()`: Gets all the lines from the start to the current span
-* `GetLinesFromSpan()`: Gets all the lines from the current span to the end
-* `GetLastLineAtSpan()`: Gets the last lyric line from the given time span
-* `GetLastLineWordsAtSpan()`: Gets the last lyric line words from the given time span
+<table><thead><tr><th width="239.6666259765625">Function</th><th>Description</th></tr></thead><tbody><tr><td><code>GetLinesCurrent()</code></td><td>Gets all the lines from the start to the current music duration</td></tr><tr><td><code>GetLinesUpcoming()</code></td><td>Gets all the lines from the current music duration to the end</td></tr><tr><td><code>GetLastLineCurrent()</code></td><td>Gets the last lyric line from the current music duration</td></tr><tr><td><code>GetLastLineWordsCurrent()</code></td><td>Gets the last lyric line words from the current music duration</td></tr><tr><td><code>GetLinesToSpan()</code></td><td>Gets all the lines from the start to the current span</td></tr><tr><td><code>GetLinesFromSpan()</code></td><td>Gets all the lines from the current span to the end</td></tr><tr><td><code>GetLastLineAtSpan()</code></td><td>Gets the last lyric line from the given time span</td></tr><tr><td><code>GetLastLineWordsAtSpan()</code></td><td>Gets the last lyric line words from the given time span</td></tr></tbody></table>
 
+{% hint style="info" %}
 While the first four functions require you to specify a working Basolia media instance to deal with the current duration, the last four functions don't require this instance, but require specifying a time span representing the target duration.
+{% endhint %}
 
-### An example <a href="#an-example" id="an-example"></a>
+</details>
+
+<details>
+
+<summary>Example of lyrics processing</summary>
 
 If you want a simple console app that lets you print the lyric lines as they play to simulate the lyric player feature usually found in your music player, the most minimal example of such an application is this:
 
@@ -92,3 +143,5 @@ foreach (var ts in lyricLines)
 {% hint style="danger" %}
 Radio stations never support lyrics, since this requires the radio stream to be seekable, which is impossible for online radio stations as they're audible "livestreams".
 {% endhint %}
+
+</details>

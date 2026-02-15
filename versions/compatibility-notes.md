@@ -7,11 +7,15 @@ icon: notebook
 
 When you upgrade BassBoom to a version that contains a higher API version that you have, you'll need to follow the compatibility notes.
 
-## From 0.0.2.x to 0.0.3.x
+***
+
+## <mark style="color:$primary;">From 0.0.2.x to 0.0.3.x</mark>
 
 When upgrading BassBoom from 0.0.2.x to 0.0.3.x, you need to consider the following changes:
 
-### Removed fugitive mode
+<details>
+
+<summary>Removed fugitive mode</summary>
 
 {% code title="InitBasolia.cs" lineNumbers="true" %}
 ```csharp
@@ -27,15 +31,21 @@ As a result, we've removed fugitive mode.
 We advise you to stop using this mode.
 {% endhint %}
 
-## From 0.0.3.x to 0.1.0.x
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.0.3.x to 0.1.0.x</mark>
 
 When upgrading BassBoom from 0.0.3.x to 0.1.0.x, you need to consider the following changes:
 
-### Removed CachedSongInfo
+<details>
+
+<summary>Removed <code>CachedSongInfo</code></summary>
 
 {% code title="CachedSongInfo.cs" lineNumbers="true" %}
 ```csharp
-public class CachedSongInfo
+public class CachedSongInfo { }
 ```
 {% endcode %}
 
@@ -45,7 +55,11 @@ This class wasn't meant to be in the Basolia library, but it was put there as a 
 For now, you can host your own `CachedSongInfo` class while we come up with better ways to implement the caching system.
 {% endhint %}
 
-### Internalized the native part of the library
+</details>
+
+<details>
+
+<summary>Internalized the native part of the library</summary>
 
 For security reasons, we've made [this commit](https://github.com/Aptivi/BassBoom/commit/a9286743928217d0f03955f4476b34bc5827e0af#diff-20357a26bcea3043b9175a19fc3be3f849b3d4011cec3633e63ff71495d5f0d6) that internalizes the sensitive parts of the library (the ones with the P/Invoke signatures). This is so that Basolia stays the best way to use the whole BassBoom library and the program.
 
@@ -55,12 +69,16 @@ It's advisable that you stop making direct calls to the MPG123 library functions
 This commit serves as a stepping stone to the full extensibility and flexibility to the library.
 {% endhint %}
 
-### SHOUTcast exceptions cleanup
+</details>
+
+<details>
+
+<summary>SHOUTcast exceptions cleanup</summary>
 
 {% code title="Affected classes" lineNumbers="true" %}
 ```csharp
-public class ShoutcastStreamParseException : Exception
-public class ShoutcastServerException : Exception
+public class ShoutcastStreamParseException : Exception { }
+public class ShoutcastServerException : Exception { }
 ```
 {% endcode %}
 
@@ -72,11 +90,15 @@ Likewise, `ShoutcastStreamParseException` has been removed for the introduction 
 If you want to continue handling these exceptions, you must update your handler to catch the `BasoliaMiscException` instances, though it might also catch all the unrelated instances of the same exception.
 {% endhint %}
 
-### Removed extra Basolia initialization checking function
+</details>
+
+<details>
+
+<summary>Removed extra Basolia initialization checking function</summary>
 
 {% code title="InitBasolia.cs" lineNumbers="true" %}
 ```csharp
-public static bool IsInited()
+public static bool IsInited() { }
 ```
 {% endcode %}
 
@@ -88,15 +110,21 @@ As a result, the above function was removed to reduce confusion.
 You need to replace calls to this function with the `BasoliaInitialized` property as both of them exhibit the same behavior.
 {% endhint %}
 
-## From 0.1.0.x to 0.1.4.x
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.1.0.x to 0.1.4.x</mark>
 
 When upgrading BassBoom from 0.1.0.x to 0.1.4.x, you need to consider the following changes:
 
-### Exception classes have been rearranged
+<details>
+
+<summary>Exception classes have been rearranged</summary>
 
 {% code title="Basolia*Exception.cs" lineNumbers="true" %}
 ```csharp
-namespace BassBoom.Basolia
+namespace BassBoom.Basolia { }
 ```
 {% endcode %}
 
@@ -106,17 +134,23 @@ The Basolia exceptions have been moved to `BassBoom.Basolia.Exceptions` to bette
 You need to change the imports clause to `BassBoom.Basolia.Exceptions`. If you're still using functions found in the `BassBoom.Basolia` namespace, you need to add an extra imports clause pointing to the `Exceptions` namespace.
 {% endhint %}
 
-## From 0.1.4.x to 0.2.0.x
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.1.4.x to 0.2.0.x</mark>
 
 When upgrading BassBoom from 0.1.4.x to 0.2.0.x, you need to consider the following changes:
 
-### `BasoliaMedia` introduced
+<details>
+
+<summary><code>BasoliaMedia</code> introduced</summary>
 
 {% code title="PlaybackTools.cs" lineNumbers="true" %}
 ```csharp
-public static void Play()
-public static void Pause()
-public static void Stop()
+public static void Play() { }
+public static void Pause() { }
+public static void Stop() { }
 ```
 {% endcode %}
 
@@ -134,16 +168,22 @@ We also had to edit the following properties:
 You'll need to create a new instance of `BasoliaMedia` before being able to use this library to its fullest extent.
 {% endhint %}
 
-## From 0.1.4.x to 0.2.1.x
+</details>
+
+***
+
+## <mark style="color:$primary;">From 0.1.4.x to 0.2.1.x</mark>
 
 When upgrading BassBoom from 0.1.4.x to 0.2.1.x, you need to consider the following changes:
 
-### `BasoliaMedia` expanded
+<details>
+
+<summary><code>BasoliaMedia</code> expanded</summary>
 
 {% code title="DeviceTools.cs" lineNumbers="true" %}
 ```csharp
-public static (string? driver, string? device) GetCurrentCached()
-public static void Reset()
+public static (string? driver, string? device) GetCurrentCached() { }
+public static void Reset() { }
 ```
 {% endcode %}
 
@@ -158,3 +198,5 @@ We also had to edit the following properties:
 {% hint style="info" %}
 You'll need to create a new instance of `BasoliaMedia` before being able to use this library to its fullest extent.
 {% endhint %}
+
+</details>

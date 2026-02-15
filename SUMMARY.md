@@ -12,16 +12,12 @@
 
 ## Installation
 
-* [Installing BassBoom](installation/installing-bassboom/README.md)
-  * [Windows](installation/installing-bassboom/windows.md)
-  * [macOS](installation/installing-bassboom/macos.md)
-  * [Linux](installation/installing-bassboom/linux.md)
-  * [Android](installation/installing-bassboom/android.md)
-* [Upgrading BassBoom](installation/upgrading-bassboom/README.md)
-  * [Windows](installation/upgrading-bassboom/windows.md)
-  * [macOS](installation/upgrading-bassboom/macos.md)
-  * [Linux](installation/upgrading-bassboom/linux.md)
-  * [Android](installation/upgrading-bassboom/android.md)
+* [Installation and Upgrade](installation/installation-and-upgrade/README.md)
+  * [Windows](installation/installation-and-upgrade/windows.md)
+  * [macOS](installation/installation-and-upgrade/macos.md)
+  * [Linux](installation/installation-and-upgrade/linux.md)
+  * [Android](installation/installation-and-upgrade/android.md)
+* [Installation and Upgrade (Basolia)](https://app.gitbook.com/s/Id4bob6wnHvpX4zbVVtI/csharp-libraries/installation-and-upgrade)
 
 ## Fundamentals
 
@@ -29,7 +25,6 @@
 * [What is BassBoom?](fundamentals/what-is-bassboom.md)
 * [BassBoom Features](fundamentals/bassboom-features/README.md)
   * [BassBoom CLI](fundamentals/bassboom-features/bassboom-cli.md)
-  * [BassBoom GUI](fundamentals/bassboom-features/bassboom-gui.md)
 
 ## Power Users
 

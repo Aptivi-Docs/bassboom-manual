@@ -1,15 +1,23 @@
 ---
-description: How to install BassBoom to your PC
+description: How to install or upgrade BassBoom to your PC
 icon: compact-disc
 ---
 
-# Installing BassBoom
+# Installation and Upgrade
 
-BassBoom can be installed on all the supported platforms. The installation steps are straightforward, but must be followed in order to ensure that BassBoom starts right.
+BassBoom can be installed or upgraded on all the supported platforms. The installation or upgrade steps are straightforward, but must be followed in order to ensure that BassBoom starts right.
 
 {% hint style="danger" %}
 &#x20;We no longer support 32-bit platforms; hence we only support ARM64 and AMD64. Find out why [here](https://officialaptivi.wordpress.com/2024/08/03/final-word-regarding-32-bit-support/).
 {% endhint %}
+
+{% hint style="success" %}
+It's a good practice to verify that your download is not corrupt using the methods outlined in the [Attestations](https://app.gitbook.com/s/Id4bob6wnHvpX4zbVVtI/csharp-libraries/attestations) page.
+{% endhint %}
+
+***
+
+## <mark style="color:$primary;">BassBoom CLI</mark>
 
 Depending on your platform, the amount of disk space taken by BassBoom and its runtime dependencies might vary. Select your platform below and follow the steps.
 
@@ -29,11 +37,9 @@ Depending on your platform, the amount of disk space taken by BassBoom and its r
 [android.md](android.md)
 {% endcontent-ref %}
 
-{% hint style="success" %}
-It's a good practice to verify that your download is not corrupt using the methods outlined in the [Attestations](https://app.gitbook.com/s/Id4bob6wnHvpX4zbVVtI/csharp-libraries/attestations) page.
-{% endhint %}
+***
 
-## BassBoom Basolia
+## <mark style="color:$primary;">BassBoom Basolia</mark> <a href="#bassboom-basolia" id="bassboom-basolia"></a>
 
 You can follow the installation and upgrade steps by clicking on the link below to get the full instructions:
 

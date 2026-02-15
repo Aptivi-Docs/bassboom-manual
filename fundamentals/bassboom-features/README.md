@@ -14,7 +14,3 @@ As we develop more features, they'll get listed here.
 {% content-ref url="bassboom-cli.md" %}
 [bassboom-cli.md](bassboom-cli.md)
 {% endcontent-ref %}
-
-{% content-ref url="bassboom-gui.md" %}
-[bassboom-gui.md](bassboom-gui.md)
-{% endcontent-ref %}
