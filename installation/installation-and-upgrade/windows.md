@@ -23,7 +23,19 @@ There are several ways to install BassBoom on Windows systems. We recommend inst
 
 <details>
 
-<summary>Method 1: Using Windows Installer</summary>
+<summary>Method 1: Using WinGet</summary>
+
+This step-by-step guide shows you how to install BassBoom using the package manager, [WinGet](https://learn.microsoft.com/en-us/windows/package-manager/winget/#install-winget), assuming that you already have it on your system.
+
+1. Ensure that Chocolatey is installed to your system PATH
+2. Open your favorite terminal emulator, like ConEmu, and execute the following command: `winget install --id Aptivi.BassBoom --source winget`
+3. Double-click on `BassBoom` in your desktop.
+
+</details>
+
+<details>
+
+<summary>Method 2: Using Windows Installer</summary>
 
 The Windows Installer method allows you to easily install BassBoom.
 
@@ -35,7 +47,7 @@ The Windows Installer method allows you to easily install BassBoom.
 
 <details>
 
-<summary>Method 2: Using Chocolatey</summary>
+<summary>Method 3: Using Chocolatey</summary>
 
 This step-by-step guide shows you how to install BassBoom using the package manager, [Chocolatey](https://chocolatey.org/install), assuming that you already have it on your system.
 
@@ -47,7 +59,7 @@ This step-by-step guide shows you how to install BassBoom using the package mana
 
 <details>
 
-<summary>Method 3: Manually unpacking</summary>
+<summary>Method 4: Manually unpacking</summary>
 
 If you like to manually unpack the BassBoom packages, follow these steps:
 
@@ -67,7 +79,19 @@ Upgrading BassBoom on Windows is pretty simple, depending on the way you've inst
 
 <details>
 
-<summary>Method 1: Using Windows Installer</summary>
+<summary>Method 1: Using WinGet</summary>
+
+Any updates to the BassBoom WinGet package can be done using a built-in WinGet command. To update the app, follow these steps:
+
+1. Open your favorite terminal emulator, like ConEmu
+2. Run `winget upgrade Aptivi.BassBoom`
+3. Once the upgrade is done, run BassBoom like you normally would
+
+</details>
+
+<details>
+
+<summary>Method 2: Using Windows Installer</summary>
 
 You can update BassBoom using the Windows Installer method.
 
@@ -79,9 +103,9 @@ You can update BassBoom using the Windows Installer method.
 
 <details>
 
-<summary>Method 2: Using Chocolatey</summary>
+<summary>Method 3: Using Chocolatey</summary>
 
-Any updates to the BassBoom Chocolatey package can be done using a built-in Chocolatey command. To update the kernel, follow these steps:
+Any updates to the BassBoom Chocolatey package can be done using a built-in Chocolatey command. To update the app, follow these steps:
 
 1. Open your favorite terminal emulator, like ConEmu
 2. Run `choco upgrade bassboom`
@@ -91,7 +115,7 @@ Any updates to the BassBoom Chocolatey package can be done using a built-in Choc
 
 <details>
 
-<summary>Method 3: Manually unpacking</summary>
+<summary>Method 4: Manually unpacking</summary>
 
 BassBoom can also be manually updated in case the above methods failed. To update BassBoom, perform the same steps as in installing it.
 
