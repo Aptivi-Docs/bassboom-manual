@@ -5,7 +5,7 @@ icon: music
 
 # BassBoom CLI
 
-<figure><img src="../../.gitbook/assets/BB.Cli.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/music.png" alt=""><figcaption></figcaption></figure>
 
 BassBoom provides you its CLI version that allows you to play any music using just your terminal emulator. You can use this version if you need no GUI and just want to play music using just the textual UI.
 
@@ -19,15 +19,23 @@ Since the TUI version uses Terminaux to render its elements, you need to have a 
 
 You can run this program by either double-clicking an executable file, which will prompt you for the full path to a music file, or by opening the command prompt to the BassBoom.Cli binaries directory and writing the command like this:
 
-* For Windows, `BassBoom.Cli.exe path/to/music.mp3`
-* For Linux, `dotnet BassBoom.Cli.dll path/to/music.mp3`
+* For Windows, `BassBoom.Cli.exe --path path/to/music.mp3`
+* For Linux, `dotnet BassBoom.Cli.dll --path path/to/music.mp3`
 
-Additionally, you can use this program to run it as a radio station player using the `-r` switch without providing any argument.
+<details>
 
-* For Windows, `BassBoom.Cli.exe -r`
-* For Linux, `dotnet BassBoom.Cli.dll -r`
+<summary>What about radio?</summary>
+
+<figure><img src="../../.gitbook/assets/radio.png" alt=""><figcaption></figcaption></figure>
+
+Additionally, you can use this program to run it as a radio station player using the `--radio` switch without providing any argument.
+
+* For Windows, `BassBoom.Cli.exe --radio`
+* For Linux, `dotnet BassBoom.Cli.dll --radio`
 
 Once done, BassBoom opens your music file to be ready for playing. Just play your music by pressing the spacebar.
+
+</details>
 
 ***
 
@@ -80,6 +88,8 @@ When BassBoom.Cli goes into this mode by playing any music, you can use these co
 ***
 
 ## <mark style="color:$primary;">Equalizer screen</mark>
+
+<figure><img src="../../.gitbook/assets/equalizer.png" alt=""><figcaption></figcaption></figure>
 
 You can also modify how your song or your radio station plays like in real-time using the interactive equalizer.
 

@@ -5,11 +5,7 @@ icon: hand-wave
 
 # Welcome!
 
-<figure><img src=".gitbook/assets/BB.Cli.png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="info" %}
-BassBoom will be upgraded with a new backend. It's in early development stage, so expect inconsistencies and bugs. You can track its development [here](https://github.com/Aptivi/BassBoom). For the mpg123 version, check [here](https://github.com/Aptivi/BassBoom/tree/x/oob/v0.2.x). Support for 0.2.x is still undecided.
-{% endhint %}
+<figure><img src=".gitbook/assets/music.png" alt=""><figcaption></figcaption></figure>
 
 BassBoom is a music player made with C# using the fast mpg123 library as the native backend that handles the music playback and song information, including the playback device information.
 
