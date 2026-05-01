@@ -27,7 +27,7 @@ You'll need to give an instance of `BasoliaMedia` to the Basolia functions that 
 
 ## <mark style="color:$primary;">Basolia Categories</mark>
 
-The Basolia library is categorized to six categories:
+The Basolia library is categorized to seven categories:
 
 * [**Devices**](devices.md): Provides you functions that manipulate with the sound devices probed by the MPG123 library.
 * [**File**](file.md): Provides you functions that allow you to open and close the music file.

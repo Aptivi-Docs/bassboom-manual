@@ -33,6 +33,10 @@ Depending on your platform, the amount of disk space taken by BassBoom and its r
 [linux.md](linux.md)
 {% endcontent-ref %}
 
+{% content-ref url="freebsd.md" %}
+[freebsd.md](freebsd.md)
+{% endcontent-ref %}
+
 {% content-ref url="android.md" %}
 [android.md](android.md)
 {% endcontent-ref %}

@@ -20,13 +20,13 @@ The playback tools shipped with the Basolia library is a key feature for every s
 There are two ways to play the music: synchronously and asynchronously. For normal console applications, you'd typically use `Play()` for a single audio player, or this function in a thread for a music player, such as BassBoom.Cli.
 
 ```csharp
-public static void Play(BasoliaMedia? basolia) { }
+public void Play() { }
 ```
 
 However, for GUI applications, it's best to use the asynchronous version whenever possible, `PlayAsync()`, to avoid blocking the main thread.
 
 ```csharp
-public static async Task PlayAsync(BasoliaMedia? basolia) { }
+public async Task PlayAsync() { }
 ```
 
 </details>
@@ -38,8 +38,8 @@ public static async Task PlayAsync(BasoliaMedia? basolia) { }
 If you want to pause the music, you can use the `Pause()` function. It'll stop the music, but stays at the current position. If you want to start over, you can use the `Stop()` function.
 
 ```csharp
-public static void Pause(BasoliaMedia? basolia) { }
-public static void Stop(BasoliaMedia? basolia) { }
+public void Pause() { }
+public void Stop() { }
 ```
 
 </details>
@@ -53,19 +53,15 @@ For controlling the volume that the Basolia library controls, you can use both t
 `SetVolume()` allows you to set the current volume to the new volume from 0.0 (0%) to 1.0 (100%). Additionally, if you've enabled the volume boost option, you can set the volume up to 3.0 (300%), though this may cause audio artifacts in some cases where parts of an audio file is loud.
 
 ```csharp
-public static void SetVolume(BasoliaMedia? basolia, double volume, bool volBoost = false) { }
+public void SetVolume(double volume, bool volBoost = false) { }
 ```
 
 Getting the current volume using the `GetVolume()` function returns three variables that describe the following:
 
-| Variable       | Description                              |
-| -------------- | ---------------------------------------- |
-| `baseLinear`   | The base linear volume from 0.0 to 1.0   |
-| `actualLinear` | The actual linear volume from 0.0 to 1.0 |
-| `decibelsRva`  | The RVA value in decibels (dB)           |
+<table><thead><tr><th width="141">Variable</th><th>Description</th></tr></thead><tbody><tr><td><code>baseLinear</code></td><td>The base linear volume from 0.0 to 1.0</td></tr><tr><td><code>actualLinear</code></td><td>The actual linear volume from 0.0 to 1.0</td></tr><tr><td><code>decibelsRva</code></td><td>The RVA value in decibels (dB)</td></tr></tbody></table>
 
 ```csharp
-public static (double baseLinear, double actualLinear, double decibelsRva) GetVolume(BasoliaMedia? basolia) { }
+public (double baseLinear, double actualLinear, double decibelsRva) GetVolume() { }
 ```
 
 </details>
@@ -77,13 +73,13 @@ public static (double baseLinear, double actualLinear, double decibelsRva) GetVo
 When either `Play()`, `Pause()`, or `Stop()` functions are called, the playback state changes, depending on the action. You can get the current playback state by using the `GetState` function.
 
 ```csharp
-public static PlaybackState GetState(BasoliaMedia? basolia) { }
+public PlaybackState GetState() { }
 ```
 
 You can also quickly determine whether Basolia is busy playing a song using the `IsPlaying` function:
 
 ```csharp
-public static bool IsPlaying(BasoliaMedia? basolia) { }
+public bool IsPlaying() { }
 ```
 
 The playback states are the following:
@@ -99,7 +95,7 @@ The playback states are the following:
 If you want to open the output to your selected device and driver or to a pre-determined device and driver as selected by your OS, you can use the below function:
 
 ```csharp
-public static void OpenOutput(BasoliaMedia? basolia) { }
+public void OpenOutput() { }
 ```
 
 {% hint style="info" %}
@@ -115,7 +111,7 @@ You don't usually need to call this function, unless you have a reason to. Playb
 If you want to start the output at a selected rate, channel count, and encoding, you can use the below function:
 
 ```csharp
-public static void StartOutput(BasoliaMedia? basolia, long rate, ChannelCount channels, int encoding) { }
+public void StartOutput(long rate, ChannelCount channels, int encoding) { }
 ```
 
 {% hint style="info" %}
@@ -131,7 +127,7 @@ You don't usually need to call this function, unless you have a reason to. Playb
 If you no longer want to output anything, you can use this function:
 
 ```csharp
-public static void CloseOutput(BasoliaMedia? basolia) { }
+public void CloseOutput() { }
 ```
 
 {% hint style="danger" %}
@@ -144,7 +140,7 @@ Use this function carefully, as reckless usage could cause the underlying applic
 
 ## <mark style="color:$primary;">Play'n'Forget</mark>
 
-If you don't want to set up a persistent `BasoliaMedia` instance for every operation, you can use this technique to implement Play'n'Forget in your applications so that you can play either a file or a stream without any difficulty. The below functions can be found in the `Independent` namespace.
+If you don't want to set up a persistent `BasoliaMedia` instance for every operation, you can use this technique to implement Play'n'Forget in your applications so that you can play either a file or a stream without any difficulty. The below functions can be found in the `BassBoom.Basolia.Media.Independent` namespace.
 
 {% hint style="info" %}
 If you want to change a specific setting, you should create a class instance of `PlayForgetSettings` that consists of:
@@ -203,13 +199,13 @@ In addition to the playback tools, you can also get access to the positioning to
 You can get the current duration in two units: Samples and time span. If you want to get the current duration using the samples, you can use the `GetCurrentDuration()` function:
 
 ```csharp
-public static int GetCurrentDuration(BasoliaMedia? basolia) { }
+public int GetCurrentDuration() { }
 ```
 
 Similarly, you can also get the current duration in the timespan for easier representation by using the `GetCurrentDurationSpan()` function:
 
 ```csharp
-public static TimeSpan GetCurrentDurationSpan(BasoliaMedia? basolia) { }
+public TimeSpan GetCurrentDurationSpan() { }
 ```
 
 </details>
@@ -222,13 +218,13 @@ If you want to seek the music file either to a selected position using a frame n
 
 ```csharp
 // For seeking to the beginning
-public static void SeekToTheBeginning(BasoliaMedia? basolia) { }
+public void SeekToTheBeginning() { }
 
 // For seeking to a specific MPEG frame
-public static void SeekToFrame(BasoliaMedia? basolia, int frame) { }
+public void SeekToFrame(int frame) { }
 
 // For seeking to a specific lyric line
-public static void SeekLyric(BasoliaMedia? basolia, LyricLine lyricLine) { }
+public void SeekLyric(LyricLine lyricLine) { }
 ```
 
 </details>
@@ -240,7 +236,7 @@ public static void SeekLyric(BasoliaMedia? basolia, LyricLine lyricLine) { }
 If you want to flush all MPEG frames to the device for any reason, you can use this function:
 
 ```csharp
-public static void Drop(BasoliaMedia? basolia) { }
+public void Drop() { }
 ```
 
 </details>
@@ -262,7 +258,7 @@ You can run this tool on either left, right, or both speakers.
 If you want to get the current equalizer values, you can use the below function:
 
 ```csharp
-public static double GetEqualizer(BasoliaMedia? basolia, mpg123_channels channels, int bandIdx) { }
+public double GetEqualizer(mpg123_channels channels, int bandIdx) { }
 ```
 
 </details>
@@ -275,10 +271,10 @@ If you want to set the equalizer values for one or more bands to make your music
 
 ```csharp
 // For one band
-public static void SetEqualizer(BasoliaMedia? basolia, mpg123_channels channels, int bandIdx, double value) { }
+public void SetEqualizer(mpg123_channels channels, int bandIdx, double value) { }
 
 // For more than one bands
-public static void SetEqualizerRange(BasoliaMedia? basolia, mpg123_channels channels, int bandIdxStart, int bandIdxEnd, double value) { }
+public void SetEqualizerRange(mpg123_channels channels, int bandIdxStart, int bandIdxEnd, double value) { }
 ```
 
 </details>
@@ -290,7 +286,7 @@ public static void SetEqualizerRange(BasoliaMedia? basolia, mpg123_channels chan
 If you want to reset the equalizer values to their natural states (`1.00`), you can use the below function:
 
 ```csharp
-public static void ResetEqualizer(BasoliaMedia? basolia) { }
+public void ResetEqualizer() { }
 ```
 
 </details>
@@ -302,7 +298,7 @@ public static void ResetEqualizer(BasoliaMedia? basolia) { }
 If you want to get the native state of the output stream that represents the currently playing music, you can use this function:
 
 ```csharp
-public static (long, double) GetNativeState(BasoliaMedia? basolia, mpg123_state state) { }
+public (long, double) GetNativeState(mpg123_state state) { }
 ```
 
 The `mpg123_state` enumeration has the following states for you to get:

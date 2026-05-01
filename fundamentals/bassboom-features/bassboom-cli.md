@@ -33,7 +33,16 @@ Additionally, you can use this program to run it as a radio station player using
 * For Windows, `BassBoom.Cli.exe --radio`
 * For Linux, `dotnet BassBoom.Cli.dll --radio`
 
-Once done, BassBoom opens your music file to be ready for playing. Just play your music by pressing the spacebar.
+Alternatively, you can specify a path to a radio station like this:
+
+* For Windows, `BassBoom.Cli.exe --radio --path https://radio.station.com/live`
+* For Linux, `dotnet BassBoom.Cli.dll --radio --path https://radio.station.com/live`
+
+Once done, BassBoom opens your radio station to be ready for playing. Just play your favorite radio station by pressing the spacebar.
+
+{% hint style="warning" %}
+If you found a radio station that only uses AAC, AAC+, or any other non-MPEG streams, try to consult the radio station host for an MPEG stream, if available.
+{% endhint %}
 
 </details>
 
@@ -99,6 +108,6 @@ You can also modify how your song or your radio station plays like in real-time 
 
 The following controls are available:
 
-<table><thead><tr><th width="110.3333740234375">Control</th><th>Action</th></tr></thead><tbody><tr><td><code>&#x3C;-</code> / <code>-></code></td><td>Changes the current equalizer band's value</td></tr><tr><td><code>UP</code> / <code>DOWN</code></td><td>Selects the equalizer band</td></tr><tr><td><code>R</code></td><td>Resets all values</td></tr><tr><td><code>Q</code></td><td>Goes back to the player</td></tr></tbody></table>
+<table><thead><tr><th width="110.3333740234375">Control</th><th>Action</th></tr></thead><tbody><tr><td><code>&#x3C;-</code> / <code>-></code></td><td>Changes the current equalizer band's value</td></tr><tr><td><code>UP</code> / <code>DOWN</code></td><td>Selects the equalizer band</td></tr><tr><td><code>R</code></td><td>Resets all values</td></tr><tr><td><code>D</code></td><td>Shows or hides device bands</td></tr><tr><td><code>Q</code></td><td>Goes back to the player</td></tr></tbody></table>
 
 </details>

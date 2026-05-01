@@ -9,8 +9,18 @@ Within the music player, there are big amounts of features that actually excite 
 
 The buttons below list some of the features that blow your mind.
 
-As we develop more features, they'll get listed here.
+For the main music player, consult the page below:
 
 {% content-ref url="bassboom-cli.md" %}
 [bassboom-cli.md](bassboom-cli.md)
+{% endcontent-ref %}
+
+The below minimal players are shipped with BassBoom:
+
+{% content-ref url="bassboom-quickplay.md" %}
+[bassboom-quickplay.md](bassboom-quickplay.md)
+{% endcontent-ref %}
+
+{% content-ref url="bassboom-quickradio.md" %}
+[bassboom-quickradio.md](bassboom-quickradio.md)
 {% endcontent-ref %}

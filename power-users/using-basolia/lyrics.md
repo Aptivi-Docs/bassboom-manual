@@ -26,7 +26,7 @@ You can use the lyrics reader class to manage the lyrics and to make your app sy
 
 Just use the `LyricReader` class that contains:
 
-<table><thead><tr><th width="189.3333740234375">Function</th><th>Description</th></tr></thead><tbody><tr><td><code>GetLyrics(string)</code></td><td>Obtains a list of lyrics from a <code>.lrc</code> or <code>.txt</code> file </td></tr></tbody></table>
+<table><thead><tr><th width="189.3333740234375">Function</th><th>Description</th></tr></thead><tbody><tr><td><code>GetLyrics(string)</code></td><td>Obtains a list of lyrics from a <code>.lrc</code> or <code>.txt</code> file</td></tr></tbody></table>
 
 {% hint style="info" %}
 The string in this function must be a complete path to your `.lrc` or `.txt` file containing lyric information about your music.
@@ -141,7 +141,7 @@ foreach (var ts in lyricLines)
 ```
 
 {% hint style="danger" %}
-Radio stations never support lyrics, since this requires the radio stream to be seekable, which is impossible for online radio stations as they're audible "livestreams".
+Radio stations and other non-seekable streams never support lyrics, since positioning requires the stream to be seekable.
 {% endhint %}
 
 </details>

@@ -9,8 +9,16 @@ This series is the third major series that changes the way BassBoom works by res
 
 {% updates format="full" %}
 {% update date="2026-05-04" %}
-## v1.0.0
+## <mark style="color:$primary;">v1.0.0</mark>
 
-TBD...
+<mark style="color:green;">Added support for FreeBSD systems</mark>
+
+<mark style="color:green;">Introduced new apps: quick player and quick radio</mark>
+
+<mark style="color:green;">Added passing radio station URLs to BassBoom.Cli</mark>
+
+<mark style="color:yellow;">Refactored the Basolia API</mark>
+
+<mark style="color:yellow;">General improvements and bug fixes</mark>
 {% endupdate %}
 {% endupdates %}

@@ -8,7 +8,10 @@
   * [API v1.0 series](versions/version-release-notes/api-v1.0-series.md)
   * [API v1.1 series](versions/version-release-notes/api-v1.1-series.md)
   * [API v2.0 series](versions/version-release-notes/api-v2.0-series.md)
-* [Compatibility Notes](versions/compatibility-notes.md)
+* [Compatibility Notes](versions/compatibility-notes/README.md)
+  * [Upgrading to API v1.0 series](versions/compatibility-notes/upgrading-to-api-v1.0-series.md)
+  * [Upgrading to API v1.1 series](versions/compatibility-notes/upgrading-to-api-v1.1-series.md)
+  * [Upgrading to API v2.0 series](versions/compatibility-notes/upgrading-to-api-v2.0-series.md)
 
 ## Installation
 
@@ -16,6 +19,7 @@
   * [Windows](installation/installation-and-upgrade/windows.md)
   * [macOS](installation/installation-and-upgrade/macos.md)
   * [Linux](installation/installation-and-upgrade/linux.md)
+  * [FreeBSD](installation/installation-and-upgrade/freebsd.md)
   * [Android](installation/installation-and-upgrade/android.md)
 * [Installation and Upgrade (Basolia)](https://app.gitbook.com/s/Id4bob6wnHvpX4zbVVtI/csharp-libraries/installation-and-upgrade)
 
@@ -25,6 +29,8 @@
 * [What is BassBoom?](fundamentals/what-is-bassboom.md)
 * [BassBoom Features](fundamentals/bassboom-features/README.md)
   * [BassBoom CLI](fundamentals/bassboom-features/bassboom-cli.md)
+  * [BassBoom QuickPlay](fundamentals/bassboom-features/bassboom-quickplay.md)
+  * [BassBoom QuickRadio](fundamentals/bassboom-features/bassboom-quickradio.md)
 
 ## Power Users
 

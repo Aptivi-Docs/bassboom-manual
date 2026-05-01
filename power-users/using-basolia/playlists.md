@@ -25,10 +25,7 @@ You can use the following functions to manage your playlists:
 
 BassBoom's Basolia offers you a way to parse your M3U playlists either as a file or as an M3U representation. You have two functions that do this:
 
-| Function              | Description                      |
-| --------------------- | -------------------------------- |
-| `ParsePlaylist()`     | Parses a playlist file           |
-| `ParsePlaylistFrom()` | Parses a playlist representation |
+<table><thead><tr><th width="200.333251953125">Function</th><th>Description</th></tr></thead><tbody><tr><td><code>ParsePlaylist()</code></td><td>Parses a playlist file</td></tr><tr><td><code>ParsePlaylistFrom()</code></td><td>Parses a playlist representation</td></tr></tbody></table>
 
 </details>
 
