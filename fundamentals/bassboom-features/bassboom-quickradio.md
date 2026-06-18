@@ -5,7 +5,7 @@ icon: radio
 
 # BassBoom QuickRadio
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 In addition to the fully-fledged radio player, QuickRadio provides you with a tiny command-line program that allows you to specify a path to your radio station. This allows you to quickly play a radio station without having to open any radio player, straight from your terminal emulator.
 
