@@ -275,6 +275,18 @@ public static int GetZeroSample(int encoding, int sampleSize, int lsbOffset) { }
 
 </details>
 
+<details>
+
+<summary>Downsampling raw sample data</summary>
+
+If you want to downsample raw sample data, such as an array that came from SamplingDataChanged event, you can use this function to downsample raw sample data, based on the width of the array:
+
+```csharp
+public static float[] DownsampleSamples(float[] samples, int width) { }
+```
+
+</details>
+
 ***
 
 ## <mark style="color:$primary;">Decode tools</mark>

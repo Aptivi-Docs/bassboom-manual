@@ -314,3 +314,62 @@ The `mpg123_state` enumeration has the following states for you to get:
 | `MPG123_FRESH_DECODER` | Fresh decoder                |
 
 </details>
+
+***
+
+## <mark style="color:$primary;">Visualizer tools</mark>
+
+BassBoom's Basolia library also allows you to listen to the frequency and sample data across all bands, from bass to treble, and to allow you to measure the loudness of the music being played.
+
+<details>
+
+<summary>Listening to frequency band changes</summary>
+
+Basolia provides you with an event called `FrequencyBandsChanged` that allows you to get raw values of 32 frequency bands that range from the lowest to the highest.
+
+This event will get fired during the whole playback, and it will provide you with an array of normalized band frequency values, which you'll then have to use to create a visualizer.
+
+{% hint style="info" %}
+We recommend that you cache this value so that your visualizer produces accurate viewing, like in this example:
+
+{% code expandable="true" %}
+```csharp
+float[] cachedBands = new float[32];
+Visualizer.bands.CopyTo(cachedBands, 0);
+```
+{% endcode %}
+{% endhint %}
+
+This allows you to build frequency bars where you get the loudness of each band, such as bass, mid, and treble bands.
+
+</details>
+
+<details>
+
+<summary>Listening to volume changes</summary>
+
+Basolia provides you with an event called `SamplingDataChanged` that allows you to get raw values of sampling data for two channels: left and right.
+
+This event will get fired during the whole playback, and it will provide you with a tuple of sample values for both the left and the right channels, which you'll then have to use to create an oscilloscope.
+
+{% hint style="info" %}
+We recommend that you cache this value so that your visualizer produces accurate viewing, like in this example:
+
+{% code expandable="true" %}
+```csharp
+int width = ConsoleWrapper.WindowWidth;
+float[] cachedStereoLeft = new float[Visualizer.sample.left.Length];
+float[] cachedStereoRight = new float[Visualizer.sample.right.Length];
+Visualizer.sample.left.CopyTo(cachedStereoLeft, 0);
+Visualizer.sample.right.CopyTo(cachedStereoRight, 0);
+var downsampledLeft = FormatTools.DownsampleSamples(cachedStereoLeft, width);
+var downsampledRight = FormatTools.DownsampleSamples(cachedStereoRight, width);
+```
+{% endcode %}
+
+You'll have to downsample the values yourself, and the format tools will provide you with a function you can call, which is `DownsampleSamples()`.
+{% endhint %}
+
+This allows you to build oscilloscopes where you can measure the loudness of the music.
+
+</details>
